@@ -8,7 +8,7 @@
 - Arpan Joardar — PES1UG25CS805 — `@arpan-joardar`.  
 **Source of truth:** [MINI PROJECT.pdf](./MINI%20PROJECT.pdf) containing the SRS, Test Plan and SAD.
 
-The source mini-project PDF previously listed `PES1UG24CS805`, while the uploaded `5H_VibeCodingGitRepoLinks.xlsx` maps Arpan Joardar to `PES1UG25CS805`. I used the Excel mapping to identify Arpan's GitHub account, but the mini-project PDF disagrees on the SRN; confirm the discrepancy with your team/instructor before final grading.
+Arpan Joardar's SRN is confirmed as `PES1UG25CS805` by the student. The `PES1UG24CS805` entry in the mini-project PDF is treated as stale.
 
 This is the **group mini-project** repository. The separate solo VibeCoding task is `53_arm_wrestle`, submitted in [PES1UG24CS484-pes-vcs/Lab-4](https://github.com/ignite-2005/PES1UG24CS484-pes-vcs/tree/main/Lab-4).
 
