@@ -53,7 +53,7 @@ A GitHub Projects V2 board should be created and linked to this repository. Add 
 - Estimate (number): use the SP values above
 - Priority: High / Medium / Low
 - Iteration: Sprint 1 (19–23 Oct 2026), Sprint 2 (26–30 Oct 2026)
-- Assignees: assign actual GitHub usernames once the team handles are confirmed
+- Assignees: handles are verified, but only `@ignite-2005` could be assigned. The other three accounts currently have read-level repository permission; raise them to an eligible write/triage permission before retrying teammate assignments
 
 The Epic/Story issues and this backlog register are live on GitHub. The actual GitHub Projects V2 board and its Estimate/Iteration fields are not yet configured. GitHub assignment attempts were verified against issue records: only @ignite-2005 assignments succeeded; the three teammate accounts have read-level repository permission, so their issues remain unassigned until repository access is upgraded. The linked Jira board has the Epic/Story issues, Story point estimates, priorities, and Sprint 1/2 assignments; teammates remain unassigned in Jira because no matching assignable accounts were returned.
 
