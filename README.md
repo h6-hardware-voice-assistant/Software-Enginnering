@@ -2,7 +2,10 @@
 
 **Project:** Hardware-Based Voice Assistant for Multimedia Controls  
 **Team SRNs in submitted plan:** PES1UG24CS484, PES1UG24CS446, PES1UG24CS805, PES1UG24CS439  
+**Confirmed team:** PES1UG24CS446, PES1UG24CS805, PES1UG24CS439, and PES1UG24CS484 (you).  
 **Source of truth:** [MINI PROJECT.pdf](./MINI%20PROJECT.pdf) containing the SRS, Test Plan and SAD.
+
+This is the **group mini-project** repository. The separate solo VibeCoding task is `53_arm_wrestle`, submitted in [PES1UG24CS484-pes-vcs/Lab-4](https://github.com/ignite-2005/PES1UG24CS484-pes-vcs/tree/main/Lab-4).
 
 ## Backlog links
 
