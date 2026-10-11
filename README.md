@@ -14,7 +14,8 @@ This is the **group mini-project** repository. The separate solo VibeCoding task
 
 ## Backlog links
 
-- [Backlog register with story points, sprints and requirement traceability](./BACKLOG.md)
+- [Backlog register with story points, sprint plan, requirement traceability and Jira cross-reference](./BACKLOG.md)
+- [Jira H6 backlog board](https://ignite005.atlassian.net/jira/software/c/projects/SCRUM/boards/1) — Epics SCRUM-6–SCRUM-11 and Stories SCRUM-12–SCRUM-28.
 - Epics: [Voice input](https://github.com/ignite-2005/Software-Enginnering/issues/1) · [Playback/navigation](https://github.com/ignite-2005/Software-Enginnering/issues/2) · [Volume](https://github.com/ignite-2005/Software-Enginnering/issues/3) · [Validation/errors](https://github.com/ignite-2005/Software-Enginnering/issues/4) · [Quality/hardware](https://github.com/ignite-2005/Software-Enginnering/issues/5) · [Automation/delivery](https://github.com/ignite-2005/Software-Enginnering/issues/6)
 - Story issues: #7–#23 in the repository's Issues tab.
 
@@ -25,4 +26,4 @@ This is the **group mini-project** repository. The separate solo VibeCoding task
 The story estimates are proposed planning values derived from the SRS/Test Plan/SAD; confirm with the team. The source document's NFR-01 does not state a numeric latency threshold, so confirm one before using a pass/fail performance test.
 
 ## Still to configure in GitHub Projects
-The Issues are created and linked to the epics in their descriptions. The actual GitHub Projects V2 board and its Estimate/Iteration custom fields remain to be configured. Verified GitHub handles are listed above and in BACKLOG.md. GitHub accepted assignment to @ignite-2005 only; the other three accounts currently have read-level permission on this repository and their issues remain unassigned. Grant the team members write/triage access (or the required assignment permission) before retrying those assignees. The three Jira teammates were not found in the connected Jira site's assignable-user list, so their Jira issues remain unassigned there.
+The Issues are created and linked to the epics in their descriptions. The actual GitHub Projects V2 board and its Estimate/Iteration custom fields remain to be configured. GitHub issue ownership is documented in BACKLOG.md. GitHub accepted assignment to @ignite-2005 only; the other three accounts currently have read-level permission on this repository and their issues remain unassigned. Grant the team members appropriate write/triage access before retrying those assignees. In Jira, the Epic and Story issues, parent links, Story point estimates, priorities and two sprint assignments are configured. Only Surjo Sarkar is available as an assignable Jira user on the connected site; team stories are documented with suggested GitHub owners and remain unassigned in Jira until teammates have assignable Jira accounts.
