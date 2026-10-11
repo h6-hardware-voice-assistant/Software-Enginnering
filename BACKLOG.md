@@ -68,28 +68,28 @@ The group mini-project backlog has also been created in the connected Jira site 
 
 | GitHub issue | Jira issue |
 |---|---|
-| Epic #1 — Voice input | [SCRUM-6](https://YOUR-JIRA-SITE/browse/SCRUM-6) |
-| Epic #2 — Playback/navigation | [SCRUM-7](https://YOUR-JIRA-SITE/browse/SCRUM-7) |
-| Epic #3 — Volume | [SCRUM-8](https://YOUR-JIRA-SITE/browse/SCRUM-8) |
-| Epic #4 — Validation/errors | [SCRUM-9](https://YOUR-JIRA-SITE/browse/SCRUM-9) |
-| Epic #5 — Quality/hardware | [SCRUM-10](https://YOUR-JIRA-SITE/browse/SCRUM-10) |
-| Epic #6 — Automation/delivery | [SCRUM-11](https://YOUR-JIRA-SITE/browse/SCRUM-11) |
-| Story #7 | [SCRUM-12](https://YOUR-JIRA-SITE/browse/SCRUM-12) |
-| Story #8 | [SCRUM-13](https://YOUR-JIRA-SITE/browse/SCRUM-13) |
-| Story #9 | [SCRUM-14](https://YOUR-JIRA-SITE/browse/SCRUM-14) |
-| Story #10 | [SCRUM-15](https://YOUR-JIRA-SITE/browse/SCRUM-15) |
-| Story #11 | [SCRUM-16](https://YOUR-JIRA-SITE/browse/SCRUM-16) |
-| Story #12 | [SCRUM-17](https://YOUR-JIRA-SITE/browse/SCRUM-17) |
-| Story #13 | [SCRUM-18](https://YOUR-JIRA-SITE/browse/SCRUM-18) |
-| Story #14 | [SCRUM-19](https://YOUR-JIRA-SITE/browse/SCRUM-19) |
-| Story #15 | [SCRUM-20](https://YOUR-JIRA-SITE/browse/SCRUM-20) |
-| Story #16 | [SCRUM-21](https://YOUR-JIRA-SITE/browse/SCRUM-21) |
-| Story #17 | [SCRUM-22](https://YOUR-JIRA-SITE/browse/SCRUM-22) |
-| Story #18 | [SCRUM-23](https://YOUR-JIRA-SITE/browse/SCRUM-23) |
-| Story #19 | [SCRUM-24](https://YOUR-JIRA-SITE/browse/SCRUM-24) |
-| Story #20 | [SCRUM-25](https://YOUR-JIRA-SITE/browse/SCRUM-25) |
-| Story #21 | [SCRUM-26](https://YOUR-JIRA-SITE/browse/SCRUM-26) |
-| Story #22 | [SCRUM-27](https://YOUR-JIRA-SITE/browse/SCRUM-27) |
-| Story #23 | [SCRUM-28](https://YOUR-JIRA-SITE/browse/SCRUM-28) |
+| Epic #1 — Voice input | [SCRUM-6](https://ignite005.atlassian.net/browse/SCRUM-6) |
+| Epic #2 — Playback/navigation | [SCRUM-7](https://ignite005.atlassian.net/browse/SCRUM-7) |
+| Epic #3 — Volume | [SCRUM-8](https://ignite005.atlassian.net/browse/SCRUM-8) |
+| Epic #4 — Validation/errors | [SCRUM-9](https://ignite005.atlassian.net/browse/SCRUM-9) |
+| Epic #5 — Quality/hardware | [SCRUM-10](https://ignite005.atlassian.net/browse/SCRUM-10) |
+| Epic #6 — Automation/delivery | [SCRUM-11](https://ignite005.atlassian.net/browse/SCRUM-11) |
+| Story #7 | [SCRUM-12](https://ignite005.atlassian.net/browse/SCRUM-12) |
+| Story #8 | [SCRUM-13](https://ignite005.atlassian.net/browse/SCRUM-13) |
+| Story #9 | [SCRUM-14](https://ignite005.atlassian.net/browse/SCRUM-14) |
+| Story #10 | [SCRUM-15](https://ignite005.atlassian.net/browse/SCRUM-15) |
+| Story #11 | [SCRUM-16](https://ignite005.atlassian.net/browse/SCRUM-16) |
+| Story #12 | [SCRUM-17](https://ignite005.atlassian.net/browse/SCRUM-17) |
+| Story #13 | [SCRUM-18](https://ignite005.atlassian.net/browse/SCRUM-18) |
+| Story #14 | [SCRUM-19](https://ignite005.atlassian.net/browse/SCRUM-19) |
+| Story #15 | [SCRUM-20](https://ignite005.atlassian.net/browse/SCRUM-20) |
+| Story #16 | [SCRUM-21](https://ignite005.atlassian.net/browse/SCRUM-21) |
+| Story #17 | [SCRUM-22](https://ignite005.atlassian.net/browse/SCRUM-22) |
+| Story #18 | [SCRUM-23](https://ignite005.atlassian.net/browse/SCRUM-23) |
+| Story #19 | [SCRUM-24](https://ignite005.atlassian.net/browse/SCRUM-24) |
+| Story #20 | [SCRUM-25](https://ignite005.atlassian.net/browse/SCRUM-25) |
+| Story #21 | [SCRUM-26](https://ignite005.atlassian.net/browse/SCRUM-26) |
+| Story #22 | [SCRUM-27](https://ignite005.atlassian.net/browse/SCRUM-27) |
+| Story #23 | [SCRUM-28](https://ignite005.atlassian.net/browse/SCRUM-28) |
 
 Jira Sprint 1 is `H6 Voice Assistant — Sprint 1` (19–23 Oct 2026, 28 points); Sprint 2 is `H6 Voice Assistant — Sprint 2` (26–30 Oct 2026, 20 points). The custom `Story point estimate` field, priority and sprint have been written to each Jira Story. Team-member Jira accounts could not be resolved as assignable users; Jira assignee fields remain blank.
