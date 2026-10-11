@@ -24,27 +24,27 @@ Story points use a simple Fibonacci-like planning scale (1, 2, 3, 5, 8). Estimat
 
 ## Story backlog
 
-| Issue | User story | SP | Priority | Sprint | Requirement mapping | Suggested owner SRN |
+| Issue | User story | SP | Priority | Sprint | Requirement mapping | Suggested owner (SRN / GitHub) |
 |---|---|---:|---|---|---|---|
-| [#7](https://github.com/ignite-2005/Software-Enginnering/issues/7) | Capture microphone input | 3 | High | 1 | FR-01, FR-11, TC-01 | PES1UG24CS484 |
-| [#8](https://github.com/ignite-2005/Software-Enginnering/issues/8) | Recognize predefined command vocabulary | 5 | High | 1 | FR-02, TC-01 | PES1UG24CS446 |
-| [#9](https://github.com/ignite-2005/Software-Enginnering/issues/9) | Start playback on Play | 3 | High | 1 | FR-03, TC-02 | PES1UG24CS484 |
-| [#10](https://github.com/ignite-2005/Software-Enginnering/issues/10) | Pause current media | 2 | High | 1 | FR-04, TC-03 | PES1UG24CS446 |
-| [#11](https://github.com/ignite-2005/Software-Enginnering/issues/11) | Resume paused media | 2 | Medium | 1 | FR-05, TC-04 | PES1UG24CS439 |
-| [#12](https://github.com/ignite-2005/Software-Enginnering/issues/12) | Validate recognized command allow-list | 3 | High | 1 | FR-10, NFR-04, SR-01/02 | PES1UG24CS484 |
-| [#13](https://github.com/ignite-2005/Software-Enginnering/issues/13) | Handle microphone/player failures safely | 3 | High | 1 | FR-11 | PES1UG24CS446 |
-| [#14](https://github.com/ignite-2005/Software-Enginnering/issues/14) | Measure command latency | 2 | Medium | 1 | NFR-01 | PES1UG24CS439 |
-| [#15](https://github.com/ignite-2005/Software-Enginnering/issues/15) | Keep commands and feedback understandable | 2 | Medium | 1 | NFR-02 | PES1UG24CS805 |
-| [#22](https://github.com/ignite-2005/Software-Enginnering/issues/22) | Run tests on pushes and PRs | 3 | High | 1 | Test plan, NFR-03 | PES1UG24CS484 |
-| [#16](https://github.com/ignite-2005/Software-Enginnering/issues/16) | Volume Up and Volume Down | 3 | High | 2 | FR-06/07, TC-05/06 | PES1UG24CS805 |
-| [#17](https://github.com/ignite-2005/Software-Enginnering/issues/17) | Select next media item | 2 | Medium | 2 | FR-08, TC-07 | PES1UG24CS439 |
-| [#18](https://github.com/ignite-2005/Software-Enginnering/issues/18) | Select previous media item | 2 | Medium | 2 | FR-09, TC-08 | PES1UG24CS439 |
-| [#19](https://github.com/ignite-2005/Software-Enginnering/issues/19) | Verify correct, repeatable behavior | 3 | High | 2 | NFR-03, TC-01–08 | PES1UG24CS446 |
-| [#20](https://github.com/ignite-2005/Software-Enginnering/issues/20) | Separate recognition/processing/control modules | 3 | Medium | 2 | NFR-05, SAD | PES1UG24CS484 |
-| [#21](https://github.com/ignite-2005/Software-Enginnering/issues/21) | Verify Raspberry Pi/compatible target | 5 | Medium | 2 | NFR-06 | PES1UG24CS805 |
-| [#23](https://github.com/ignite-2005/Software-Enginnering/issues/23) | Document setup, command mapping and evidence | 2 | Medium | 2 | SRS/SAD/Test Plan | PES1UG24CS446 |
+| [#7](https://github.com/ignite-2005/Software-Enginnering/issues/7) | Capture microphone input | 3 | High | 1 | FR-01, FR-11, TC-01 | PES1UG24CS484 / @ignite-2005 |
+| [#8](https://github.com/ignite-2005/Software-Enginnering/issues/8) | Recognize predefined command vocabulary | 5 | High | 1 | FR-02, TC-01 | PES1UG24CS446 / @DerpSpears |
+| [#9](https://github.com/ignite-2005/Software-Enginnering/issues/9) | Start playback on Play | 3 | High | 1 | FR-03, TC-02 | PES1UG24CS484 / @ignite-2005 |
+| [#10](https://github.com/ignite-2005/Software-Enginnering/issues/10) | Pause current media | 2 | High | 1 | FR-04, TC-03 | PES1UG24CS446 / @DerpSpears |
+| [#11](https://github.com/ignite-2005/Software-Enginnering/issues/11) | Resume paused media | 2 | Medium | 1 | FR-05, TC-04 | PES1UG24CS439 / @shivanibr0512-cmyk |
+| [#12](https://github.com/ignite-2005/Software-Enginnering/issues/12) | Validate recognized command allow-list | 3 | High | 1 | FR-10, NFR-04, SR-01/02 | PES1UG24CS484 / @ignite-2005 |
+| [#13](https://github.com/ignite-2005/Software-Enginnering/issues/13) | Handle microphone/player failures safely | 3 | High | 1 | FR-11 | PES1UG24CS446 / @DerpSpears |
+| [#14](https://github.com/ignite-2005/Software-Enginnering/issues/14) | Measure command latency | 2 | Medium | 1 | NFR-01 | PES1UG24CS439 / @shivanibr0512-cmyk |
+| [#15](https://github.com/ignite-2005/Software-Enginnering/issues/15) | Keep commands and feedback understandable | 2 | Medium | 1 | NFR-02 | PES1UG25CS805 / @arpan-joardar |
+| [#22](https://github.com/ignite-2005/Software-Enginnering/issues/22) | Run tests on pushes and PRs | 3 | High | 1 | Test plan, NFR-03 | PES1UG24CS484 / @ignite-2005 |
+| [#16](https://github.com/ignite-2005/Software-Enginnering/issues/16) | Volume Up and Volume Down | 3 | High | 2 | FR-06/07, TC-05/06 | PES1UG25CS805 / @arpan-joardar |
+| [#17](https://github.com/ignite-2005/Software-Enginnering/issues/17) | Select next media item | 2 | Medium | 2 | FR-08, TC-07 | PES1UG24CS439 / @shivanibr0512-cmyk |
+| [#18](https://github.com/ignite-2005/Software-Enginnering/issues/18) | Select previous media item | 2 | Medium | 2 | FR-09, TC-08 | PES1UG24CS439 / @shivanibr0512-cmyk |
+| [#19](https://github.com/ignite-2005/Software-Enginnering/issues/19) | Verify correct, repeatable behavior | 3 | High | 2 | NFR-03, TC-01–08 | PES1UG24CS446 / @DerpSpears |
+| [#20](https://github.com/ignite-2005/Software-Enginnering/issues/20) | Separate recognition/processing/control modules | 3 | Medium | 2 | NFR-05, SAD | PES1UG24CS484 / @ignite-2005 |
+| [#21](https://github.com/ignite-2005/Software-Enginnering/issues/21) | Verify Raspberry Pi/compatible target | 5 | Medium | 2 | NFR-06 | PES1UG25CS805 / @arpan-joardar |
+| [#23](https://github.com/ignite-2005/Software-Enginnering/issues/23) | Document setup, command mapping and evidence | 2 | Medium | 2 | SRS/SAD/Test Plan | PES1UG24CS446 / @DerpSpears |
 
-**Confirmed team roster:** PES1UG24CS446, PES1UG24CS805, PES1UG24CS439, and PES1UG24CS484. The SRNs in this table are suggested task owners, not GitHub account assignments; the source materials do not provide the team members' GitHub usernames.
+**Team roster mapped from uploaded `5H_VibeCodingGitRepoLinks.xlsx`:** PES1UG24CS446 / @DerpSpears, PES1UG24CS439 / @shivanibr0512-cmyk, PES1UG25CS805 / @arpan-joardar, and PES1UG24CS484 / @ignite-2005. Actual GitHub issue assignments have now been set to these accounts. The mini-project PDF previously listed PES1UG24CS805 for Arpan; confirm this source discrepancy with the team/instructor.
 
 ## GitHub Projects configuration still needed
 
