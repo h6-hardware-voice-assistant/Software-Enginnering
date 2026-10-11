@@ -10,7 +10,7 @@
 
 Arpan Joardar's SRN is confirmed as `PES1UG25CS805` by the student. The `PES1UG24CS805` entry in the mini-project PDF is treated as stale.
 
-This is the **group mini-project** repository. The separate solo VibeCoding task is `53_arm_wrestle`, submitted in [PES1UG24CS484-pes-vcs/Lab-4](https://github.com/ignite-2005/PES1UG24CS484-pes-vcs/tree/main/Lab-4).
+This repository contains the **Team H6 group mini-project** and its Software Engineering backlog.
 
 ## Backlog links
 
@@ -26,5 +26,8 @@ This is the **group mini-project** repository. The separate solo VibeCoding task
 
 The story estimates are proposed planning values derived from the SRS/Test Plan/SAD; confirm with the team. The source document's NFR-01 does not state a numeric latency threshold, so confirm one before using a pass/fail performance test.
 
-## Still to configure in GitHub Projects
-All 23 GitHub backlog issues (6 Epics + 17 Stories) are now assigned to their intended team members, and the assignment records were verified after all three collaborators received Write access. Story points, priorities, acceptance criteria, sprint plans, owner mappings and Jira cross-links are documented in `BACKLOG.md`. The only GitHub planning item still requiring one manual UI step is creating the actual Projects V2 board and adding issues/fields, as described in `GITHUB_PROJECT_SETUP.md`. In Jira, all 23 H6 issues exist; the 17 Stories have story points, priorities, parent Epics and Sprint 1/2 assignments. Only Surjo Sarkar is available as an assignable Jira user on the connected site; teammate Jira assignees remain blank until the three teammates are added to the Jira site/project.
+## GitHub Project status
+The **H6 — Hardware-Based Voice Assistant Backlog** Projects board has been created and populated with the existing 23 repository issues (6 Epics and 17 Stories). The board's Story Points, Priority and Iteration columns are populated for the Stories; all backlog issues have GitHub assignees and remain in Todo status. Planned totals are 28 points for Sprint 1 and 20 points for Sprint 2. See `GITHUB_PROJECT_SETUP.md` for the field map and final submission checks.
+
+## Optional Jira cross-reference
+The Jira board is an additional planning cross-reference; it is not named as a required deliverable in the supplied Mini-Project Deliverables Part-2 handout. The connected Jira directory currently exposes only Surjo as assignable, so teammate Jira assignees remain blank until those users are added to the Jira site/project.
