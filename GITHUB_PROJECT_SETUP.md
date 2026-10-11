@@ -1,6 +1,6 @@
 # GitHub Projects V2 Setup — Team H6
 
-This guide is for the **group mini-project only**: Hardware-Based Voice Assistant for Multimedia Controls. The solo `53_arm_wrestle` VibeCoding task is stored in the separate `PES1UG24CS484-pes-vcs/Lab-4` path.
+This guide documents the GitHub Projects backlog for the **Team H6 group mini-project**: Hardware-Based Voice Assistant for Multimedia Controls.
 
 ## Already prepared in this repository
 - Issues **#1–#6** are the six Epics.
@@ -9,22 +9,16 @@ This guide is for the **group mini-project only**: Hardware-Based Voice Assistan
 - Each GitHub Story has a corresponding Jira Story with a story-point estimate and sprint assignment.
 - `BACKLOG.md` contains the full table and Jira mapping.
 
-## One-time board creation (GitHub UI)
-The available GitHub connector can manage Issues and files, but it cannot create/configure Projects V2 boards. Use the GitHub website:
+## GitHub Project board — created and populated
 
-1. Open [your GitHub Projects page](https://github.com/users/ignite-2005/projects).
-2. Select **New project** and choose **Board**.
-3. Name it **H6 — Hardware-Based Voice Assistant Backlog**.
-4. Add the existing issues from this repository. Add Epic issues **#1–#6** and Story issues **#7–#23**. Do not create duplicate issues.
-5. Add/confirm these fields:
-   - **Work Type** — single select: `Epic`, `Story`.
-   - **Story Points** — number.
-   - **Priority** — single select: `High`, `Medium`, `Low`.
-   - **Iteration** — an iteration field with `Sprint 1` and `Sprint 2`.
-   - **Status** — Todo / In Progress / Done (the default status field is fine).
-6. Set **Work Type** to Epic for #1–#6 and Story for #7–#23.
-7. Set Story Points and Priority from `BACKLOG.md`; the planned story-point totals are Sprint 1 = **28** and Sprint 2 = **20**.
-8. The issue assignees are already set in GitHub. The user has created the Iteration custom field in the Project UI. Finish its schedule and apply the iteration values using the map below.
+The user created the Project **H6 — Hardware-Based Voice Assistant Backlog** and imported the 23 existing issues from this repository. The table screenshot confirms the columns Title, Assignees, Status, Linked pull requests, Sub-issues progress, Story Points, Priority and Iteration. The 17 Stories have Story Points, Priority and Iteration values; all 23 issues have GitHub assignees.
+
+Before submitting, verify on the live board:
+1. The board includes existing issues from this repository: `ignite-2005/Software-Enginnering`.
+2. The displayed Story Points sum to 28 for Sprint 1 and 20 for Sprint 2.
+3. Issues #7–#15 and #22 are in Sprint 1; issues #16–#21 and #23 are in Sprint 2.
+4. Epics #1–#6 have no sprint assignment, and all items are in the intended initial Todo status.
+5. Copy the exact Project URL from your browser address bar for submission; this guide intentionally does not guess the board's URL.
 
 ## Iteration and priority map for the Project table
 
@@ -36,9 +30,9 @@ The available GitHub connector can manage Issues and files, but it cannot create
 - Issues #16, #17, #18, #19, #20, #21, #23.
 - Priorities: #16 High, #17 Medium, #18 Medium, #19 High, #20 Medium, #21 Medium, #23 Medium.
 
-To configure the Iteration field, open its field menu/settings. Set iteration duration to **1 week** and the start date to **19 October 2026**. Rename the first iteration to **Sprint 1** and the next to **Sprint 2**; edit date ranges so they cover 19–23 Oct and 26–30 Oct respectively. Then in the table, select all ten Sprint 1 issues together and set their Iteration value once; repeat for the seven Sprint 2 issues. Keep the six Epic rows out of this Story iteration assignment.
+On the Projects board, the Stories are already assigned to the two planned iterations. The handout's planned working dates are 19–23 Oct and 26–30 Oct 2026. GitHub's one-week iteration setting may display the full calendar weeks (19–25 Oct and 26 Oct–1 Nov); verify that the iteration start dates and one-week cadence match the plan before submitting.
 
-When populating fields, use the issue numbers above rather than relying on row order after sorting or filtering.
+Use the issue numbers above rather than relying on row order after sorting or filtering.
 
 ## Collaborator access and assignments — complete
 The repository has been verified to grant **Write** permission to:
