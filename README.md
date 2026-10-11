@@ -1,11 +1,14 @@
 # Software Engineering Mini Project — Team H6
 
 **Project:** Hardware-Based Voice Assistant for Multimedia Controls  
-**Team SRNs in submitted plan:** PES1UG24CS484, PES1UG24CS446, PES1UG24CS805, PES1UG24CS439  
-**Confirmed team:** PES1UG24CS446, PES1UG24CS805, PES1UG24CS439, and PES1UG24CS484 (you).  
+**Team roster mapped from the uploaded GitHub repository-link Excel:**  
+- Surjo Sarkar — PES1UG24CS484 — `@ignite-2005`  
+- Shriniketh Kana — PES1UG24CS446 — `@DerpSpears`  
+- Shivani B R — PES1UG24CS439 — `@shivanibr0512-cmyk`  
+- Arpan Joardar — PES1UG25CS805 — `@arpan-joardar`.  
 **Source of truth:** [MINI PROJECT.pdf](./MINI%20PROJECT.pdf) containing the SRS, Test Plan and SAD.
 
-This is the **group mini-project** repository. The separate solo VibeCoding task is `53_arm_wrestle`, submitted in [PES1UG24CS484-pes-vcs/Lab-4](https://github.com/ignite-2005/PES1UG24CS484-pes-vcs/tree/main/Lab-4).
+The source mini-project PDF previously listed `PES1UG24CS805`, while the uploaded `5H_VibeCodingGitRepoLinks.xlsx` maps Arpan Joardar to `PES1UG25CS805`. I have used the Excel mapping for the GitHub account assignment; please confirm the discrepancy with your team/instructor.\n\nThis is the **group mini-project** repository. The separate solo VibeCoding task is `53_arm_wrestle`, submitted in [PES1UG24CS484-pes-vcs/Lab-4](https://github.com/ignite-2005/PES1UG24CS484-pes-vcs/tree/main/Lab-4).
 
 ## Backlog links
 
