@@ -5,7 +5,7 @@ This guide is for the **group mini-project only**: Hardware-Based Voice Assistan
 ## Already prepared in this repository
 - Issues **#1–#6** are the six Epics.
 - Issues **#7–#23** are the 17 Stories.
-- Story issue descriptions include acceptance criteria, requirement traceability, proposed story points, priority, sprint plan, suggested owner, and a Jira issue link.
+- Story issue descriptions include acceptance criteria, requirement traceability, story points, priority, sprint plan, owner and Jira issue link.
 - Each GitHub Story has a corresponding Jira Story with a story-point estimate and sprint assignment.
 - `BACKLOG.md` contains the full table and Jira mapping.
 
@@ -24,18 +24,15 @@ The available GitHub connector can manage Issues and files, but it cannot create
    - **Status** — Todo / In Progress / Done (the default status field is fine).
 6. Set **Work Type** to Epic for #1–#6 and Story for #7–#23.
 7. Set Story Points and Priority from `BACKLOG.md`; the planned story-point totals are Sprint 1 = **28** and Sprint 2 = **20**.
-8. Assign the Story cards after the collaborators' repository roles are updated.
+8. The issue assignees are already set in GitHub. Once the board exists, use `BACKLOG.md` to populate the Story Points, Priority, Iteration and Status fields.
 
-## Required account-access step before assigning teammates
-The repository currently reports `read` permission for `@DerpSpears`, `@shivanibr0512-cmyk`, and `@arpan-joardar`. GitHub did not retain issue assignments to these accounts. A repo owner must change each collaborator's role to **Write** (or another role that allows issue assignment):
+## Collaborator access and assignments — complete
+The repository has been verified to grant **Write** permission to:
+- `@DerpSpears` — Shriniketh Kana, PES1UG24CS446
+- `@shivanibr0512-cmyk` — Shivani B R, PES1UG24CS439
+- `@arpan-joardar` — Arpan Joardar, PES1UG25CS805
 
-1. Open [Manage access](https://github.com/ignite-2005/Software-Enginnering/settings/access).
-2. Under collaborators, change the role for:
-   - `@DerpSpears` — Shriniketh Kana, PES1UG24CS446
-   - `@shivanibr0512-cmyk` — Shivani B R, PES1UG24CS439
-   - `@arpan-joardar` — Arpan Joardar, PES1UG25CS805
-3. Choose **Write** and save; if the UI requires it, send/re-send the invite and ask the teammate to accept it.
-4. Return to this repository's [Issues page](https://github.com/ignite-2005/Software-Enginnering/issues) and retry assignments. The current account `@ignite-2005` is already assigned to the stories owned by Surjo.
+GitHub issue assignment is now applied and verified for all 23 backlog items (#1–#23). No further collaborator-permission action is needed for GitHub.
 
 ## Jira access limitation
 The Jira board and all 23 H6 issues are configured under the existing `SCRUM` project. The connected Atlassian directory currently returns only Surjo as assignable. The three teammates must be invited/added to the `ignite005.atlassian.net` Jira site/project with Jira access before their Jira issues can be assigned.
