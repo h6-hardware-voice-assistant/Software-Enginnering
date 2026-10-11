@@ -15,6 +15,7 @@ This is the **group mini-project** repository. The separate solo VibeCoding task
 ## Backlog links
 
 - [Backlog register with story points, sprint plan, requirement traceability and Jira cross-reference](./BACKLOG.md)
+- [GitHub Projects V2 setup guide and team access checklist](./GITHUB_PROJECT_SETUP.md)
 - [Jira H6 backlog board](https://ignite005.atlassian.net/jira/software/c/projects/SCRUM/boards/1) — Epics SCRUM-6–SCRUM-11 and Stories SCRUM-12–SCRUM-28.
 - Epics: [Voice input](https://github.com/ignite-2005/Software-Enginnering/issues/1) · [Playback/navigation](https://github.com/ignite-2005/Software-Enginnering/issues/2) · [Volume](https://github.com/ignite-2005/Software-Enginnering/issues/3) · [Validation/errors](https://github.com/ignite-2005/Software-Enginnering/issues/4) · [Quality/hardware](https://github.com/ignite-2005/Software-Enginnering/issues/5) · [Automation/delivery](https://github.com/ignite-2005/Software-Enginnering/issues/6)
 - Story issues: #7–#23 in the repository's Issues tab.
