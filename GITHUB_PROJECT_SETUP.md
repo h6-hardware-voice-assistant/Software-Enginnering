@@ -24,7 +24,21 @@ The available GitHub connector can manage Issues and files, but it cannot create
    - **Status** — Todo / In Progress / Done (the default status field is fine).
 6. Set **Work Type** to Epic for #1–#6 and Story for #7–#23.
 7. Set Story Points and Priority from `BACKLOG.md`; the planned story-point totals are Sprint 1 = **28** and Sprint 2 = **20**.
-8. The issue assignees are already set in GitHub. Once the board exists, use `BACKLOG.md` to populate the Story Points, Priority, Iteration and Status fields.
+8. The issue assignees are already set in GitHub. The user has created the Iteration custom field in the Project UI. Finish its schedule and apply the iteration values using the map below.
+
+## Iteration and priority map for the Project table
+
+**Sprint 1 — 19–23 October 2026 — 28 points**
+- Issues #7, #8, #9, #10, #11, #12, #13, #14, #15, #22.
+- Priorities: #7 High, #8 High, #9 High, #10 High, #11 Medium, #12 High, #13 High, #14 Medium, #15 Medium, #22 High.
+
+**Sprint 2 — 26–30 October 2026 — 20 points**
+- Issues #16, #17, #18, #19, #20, #21, #23.
+- Priorities: #16 High, #17 Medium, #18 Medium, #19 High, #20 Medium, #21 Medium, #23 Medium.
+
+To configure the Iteration field, open its field menu/settings. Set iteration duration to **1 week** and the start date to **19 October 2026**. Rename the first iteration to **Sprint 1** and the next to **Sprint 2**; edit date ranges so they cover 19–23 Oct and 26–30 Oct respectively. Then in the table, select all ten Sprint 1 issues together and set their Iteration value once; repeat for the seven Sprint 2 issues. Keep the six Epic rows out of this Story iteration assignment.
+
+When populating fields, use the issue numbers above rather than relying on row order after sorting or filtering.
 
 ## Collaborator access and assignments — complete
 The repository has been verified to grant **Write** permission to:
