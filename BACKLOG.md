@@ -103,4 +103,4 @@ The group mini-project backlog has also been created in the connected Jira site 
 | Story #22 | [SCRUM-27](https://ignite005.atlassian.net/browse/SCRUM-27) |
 | Story #23 | [SCRUM-28](https://ignite005.atlassian.net/browse/SCRUM-28) |
 
-Jira Sprint 1 is `H6 Voice Assistant — Sprint 1` (19–23 Oct 2026, 28 points); Sprint 2 is `H6 Voice Assistant — Sprint 2` (26–30 Oct 2026, 20 points). The custom `Story point estimate` field, priority and sprint have been written to each Jira Story. Team-member Jira accounts could not be resolved as assignable users; Jira assignee fields remain blank.
+Jira Sprint 1 is `H6 Voice Assistant — Sprint 1` (19–23 Oct 2026, 28 points); Sprint 2 is `H6 Voice Assistant — Sprint 2` (26–30 Oct 2026, 20 points). The custom `Story point estimate` field, priority and sprint have been written to each Jira Story. Surjo-owned Jira issues are assigned to Surjo Sarkar; stories owned by the other teammates remain unassigned in Jira because those accounts are not available in the connected site's assignable-user directory.
