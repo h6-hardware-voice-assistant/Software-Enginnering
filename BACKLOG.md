@@ -34,7 +34,7 @@ Story points use a simple Fibonacci-like planning scale (1, 2, 3, 5, 8). Estimat
 | [#12](https://github.com/ignite-2005/Software-Enginnering/issues/12) | Validate recognized command allow-list | 3 | High | 1 | FR-10, NFR-04, SR-01/02 | PES1UG24CS484 |
 | [#13](https://github.com/ignite-2005/Software-Enginnering/issues/13) | Handle microphone/player failures safely | 3 | High | 1 | FR-11 | PES1UG24CS446 |
 | [#14](https://github.com/ignite-2005/Software-Enginnering/issues/14) | Measure command latency | 2 | Medium | 1 | NFR-01 | PES1UG24CS439 |
-| [#15](https://github.com/ignite-2005/Software-Enginnering/issues/15) | Keep commands and feedback understandable | 2 | Medium | 1 | NFR-02 | PES1UG24CS805* |
+| [#15](https://github.com/ignite-2005/Software-Enginnering/issues/15) | Keep commands and feedback understandable | 2 | Medium | 1 | NFR-02 | PES1UG24CS805 |
 | [#22](https://github.com/ignite-2005/Software-Enginnering/issues/22) | Run tests on pushes and PRs | 3 | High | 1 | Test plan, NFR-03 | PES1UG24CS484 |
 | [#16](https://github.com/ignite-2005/Software-Enginnering/issues/16) | Volume Up and Volume Down | 3 | High | 2 | FR-06/07, TC-05/06 | PES1UG24CS805* |
 | [#17](https://github.com/ignite-2005/Software-Enginnering/issues/17) | Select next media item | 2 | Medium | 2 | FR-08, TC-07 | PES1UG24CS439 |
@@ -44,7 +44,7 @@ Story points use a simple Fibonacci-like planning scale (1, 2, 3, 5, 8). Estimat
 | [#21](https://github.com/ignite-2005/Software-Enginnering/issues/21) | Verify Raspberry Pi/compatible target | 5 | Medium | 2 | NFR-06 | PES1UG24CS805* |
 | [#23](https://github.com/ignite-2005/Software-Enginnering/issues/23) | Document setup, command mapping and evidence | 2 | Medium | 2 | SRS/SAD/Test Plan | PES1UG24CS446 |
 
-* Roster check required: the submitted mini-project PDF lists team member SRN PES1UG24CS805, but the supplied VibeCodingRepoLinks workbook contains PES1UG25CS805 for a different student. Confirm the correct SRN before assignment. Team member GitHub usernames were not present in the source materials, so SRNs are recorded as suggested owners rather than falsely claiming GitHub issue assignments were completed.
+**Confirmed team roster:** PES1UG24CS446, PES1UG24CS805, PES1UG24CS439, and PES1UG24CS484. The SRNs in this table are suggested task owners, not GitHub account assignments; the source materials do not provide the team members' GitHub usernames.
 
 ## GitHub Projects configuration still needed
 
