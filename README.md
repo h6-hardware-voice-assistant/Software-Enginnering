@@ -8,7 +8,9 @@
 - Arpan Joardar — PES1UG25CS805 — `@arpan-joardar`.  
 **Source of truth:** [MINI PROJECT.pdf](./MINI%20PROJECT.pdf) containing the SRS, Test Plan and SAD.
 
-The source mini-project PDF previously listed `PES1UG24CS805`, while the uploaded `5H_VibeCodingGitRepoLinks.xlsx` maps Arpan Joardar to `PES1UG25CS805`. I have used the Excel mapping for the GitHub account assignment; please confirm the discrepancy with your team/instructor.\n\nThis is the **group mini-project** repository. The separate solo VibeCoding task is `53_arm_wrestle`, submitted in [PES1UG24CS484-pes-vcs/Lab-4](https://github.com/ignite-2005/PES1UG24CS484-pes-vcs/tree/main/Lab-4).
+The source mini-project PDF previously listed `PES1UG24CS805`, while the uploaded `5H_VibeCodingGitRepoLinks.xlsx` maps Arpan Joardar to `PES1UG25CS805`. I have used the Excel mapping for the GitHub account assignment; please confirm the discrepancy with your team/instructor.
+
+This is the **group mini-project** repository. The separate solo VibeCoding task is `53_arm_wrestle`, submitted in [PES1UG24CS484-pes-vcs/Lab-4](https://github.com/ignite-2005/PES1UG24CS484-pes-vcs/tree/main/Lab-4).
 
 ## Backlog links
 
