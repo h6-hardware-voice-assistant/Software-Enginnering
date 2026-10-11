@@ -44,7 +44,7 @@ Story points use a simple Fibonacci-like planning scale (1, 2, 3, 5, 8). Estimat
 | [#21](https://github.com/ignite-2005/Software-Enginnering/issues/21) | Verify Raspberry Pi/compatible target | 5 | Medium | 2 | NFR-06 | PES1UG25CS805 / @arpan-joardar |
 | [#23](https://github.com/ignite-2005/Software-Enginnering/issues/23) | Document setup, command mapping and evidence | 2 | Medium | 2 | SRS/SAD/Test Plan | PES1UG24CS446 / @DerpSpears |
 
-**Team roster mapped from uploaded `5H_VibeCodingGitRepoLinks.xlsx`:** PES1UG24CS446 / @DerpSpears, PES1UG24CS439 / @shivanibr0512-cmyk, PES1UG25CS805 / @arpan-joardar, and PES1UG24CS484 / @ignite-2005. Actual GitHub issue assignments have now been set to these accounts. The mini-project PDF previously listed PES1UG24CS805 for Arpan; confirm this source discrepancy with the team/instructor.
+**Team roster mapped from uploaded `5H_VibeCodingGitRepoLinks.xlsx`:** PES1UG24CS446 / @DerpSpears, PES1UG24CS439 / @shivanibr0512-cmyk, PES1UG25CS805 / @arpan-joardar, and PES1UG24CS484 / @ignite-2005. Actual GitHub issue assignments have now been set to these accounts. Arpan Joardar's SRN is confirmed as PES1UG25CS805 by the student; the mini-project PDF's PES1UG24CS805 is treated as stale.
 
 ## GitHub Projects configuration still needed
 
