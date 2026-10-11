@@ -44,7 +44,7 @@ Story points use a simple Fibonacci-like planning scale (1, 2, 3, 5, 8). Estimat
 | [#21](https://github.com/ignite-2005/Software-Enginnering/issues/21) | Verify Raspberry Pi/compatible target | 5 | Medium | 2 | NFR-06 | PES1UG25CS805 / @arpan-joardar |
 | [#23](https://github.com/ignite-2005/Software-Enginnering/issues/23) | Document setup, command mapping and evidence | 2 | Medium | 2 | SRS/SAD/Test Plan | PES1UG24CS446 / @DerpSpears |
 
-**Team roster mapped from uploaded `5H_VibeCodingGitRepoLinks.xlsx`:** PES1UG24CS446 / @DerpSpears, PES1UG24CS439 / @shivanibr0512-cmyk, PES1UG25CS805 / @arpan-joardar, and PES1UG24CS484 / @ignite-2005. Suggested owner mappings have been documented; actual GitHub assignments succeeded only for `@ignite-2005`. Arpan Joardar's SRN is confirmed as PES1UG25CS805 by the student; the mini-project PDF's PES1UG24CS805 is treated as stale.
+**Team roster mapped from uploaded `5H_VibeCodingGitRepoLinks.xlsx`:** PES1UG24CS446 / @DerpSpears, PES1UG24CS439 / @shivanibr0512-cmyk, PES1UG25CS805 / @arpan-joardar, and PES1UG24CS484 / @ignite-2005. All GitHub issue assignments have now been applied and verified: Epics #1–#6 and Stories #7–#23 are assigned according to the roster below. Arpan Joardar's SRN is confirmed as PES1UG25CS805 by the student; the mini-project PDF's PES1UG24CS805 is treated as stale.
 
 ## GitHub Projects configuration still needed
 
@@ -53,9 +53,9 @@ A GitHub Projects V2 board should be created and linked to this repository. Add 
 - Estimate (number): use the SP values above
 - Priority: High / Medium / Low
 - Iteration: Sprint 1 (19–23 Oct 2026), Sprint 2 (26–30 Oct 2026)
-- Assignees: handles are verified, but only `@ignite-2005` could be assigned. The other three accounts currently have read-level repository permission; raise them to an eligible write/triage permission before retrying teammate assignments
+- Assignees: all existing issues #1–#23 are assigned to verified GitHub usernames after granting Write access to the three collaborators.
 
-The Epic/Story issues and this backlog register are live on GitHub. The actual GitHub Projects V2 board and its Estimate/Iteration fields are not yet configured. GitHub assignment attempts were verified against issue records: only @ignite-2005 assignments succeeded; the three teammate accounts have read-level repository permission, so their issues remain unassigned until repository access is upgraded. The linked Jira board has the Epic/Story issues, Story point estimates, priorities, and Sprint 1/2 assignments; teammates remain unassigned in Jira because no matching assignable accounts were returned.
+The Epic/Story issues and this backlog register are live on GitHub, and actual assignees are verified on all 23 issues. The GitHub Projects V2 board and its Estimate/Iteration fields still need to be created/configured through the GitHub UI. The linked Jira board has all 6 Epics and 17 Stories, with the 17 Story point estimates, priorities, parent links and Sprint 1/2 assignments. Jira assignee fields for teammates remain blank because the connected Jira site returns only Surjo Sarkar as an assignable user.
 
 ## Keep the two lab projects separate
 - **Solo VibeCoding task:** `53_arm_wrestle`, committed under `Lab-4/` in [PES1UG24CS484-pes-vcs](https://github.com/ignite-2005/PES1UG24CS484-pes-vcs/tree/main/Lab-4).
