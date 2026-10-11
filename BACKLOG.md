@@ -41,7 +41,7 @@ Story points use a simple Fibonacci-like planning scale (1, 2, 3, 5, 8). Estimat
 | [#18](https://github.com/ignite-2005/Software-Enginnering/issues/18) | Select previous media item | 2 | Medium | 2 | FR-09, TC-08 | PES1UG24CS439 |
 | [#19](https://github.com/ignite-2005/Software-Enginnering/issues/19) | Verify correct, repeatable behavior | 3 | High | 2 | NFR-03, TC-01–08 | PES1UG24CS446 |
 | [#20](https://github.com/ignite-2005/Software-Enginnering/issues/20) | Separate recognition/processing/control modules | 3 | Medium | 2 | NFR-05, SAD | PES1UG24CS484 |
-| [#21](https://github.com/ignite-2005/Software-Enginnering/issues/21) | Verify Raspberry Pi/compatible target | 5 | Medium | 2 | NFR-06 | PES1UG24CS805* |
+| [#21](https://github.com/ignite-2005/Software-Enginnering/issues/21) | Verify Raspberry Pi/compatible target | 5 | Medium | 2 | NFR-06 | PES1UG24CS805 |
 | [#23](https://github.com/ignite-2005/Software-Enginnering/issues/23) | Document setup, command mapping and evidence | 2 | Medium | 2 | SRS/SAD/Test Plan | PES1UG24CS446 |
 
 **Confirmed team roster:** PES1UG24CS446, PES1UG24CS805, PES1UG24CS439, and PES1UG24CS484. The SRNs in this table are suggested task owners, not GitHub account assignments; the source materials do not provide the team members' GitHub usernames.
