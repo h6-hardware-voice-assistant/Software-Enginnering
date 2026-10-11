@@ -17,4 +17,4 @@
 The story estimates are proposed planning values derived from the SRS/Test Plan/SAD; confirm with the team. The source document's NFR-01 does not state a numeric latency threshold, so confirm one before using a pass/fail performance test.
 
 ## Still to configure in GitHub Projects
-The Issues are created and linked to the epics in their descriptions. The actual GitHub Projects V2 board, Estimate and Iteration custom fields, and assignees by verified GitHub username remain to be configured. The supplied source lists SRNs but not GitHub handles; the PES1UG24CS805 versus PES1UG25CS805 mismatch must also be confirmed.
+The Issues are created and linked to the epics in their descriptions. The actual GitHub Projects V2 board, Estimate and Iteration custom fields, and assignees by verified GitHub username remain to be configured. The confirmed team roster is PES1UG24CS446, PES1UG24CS805, PES1UG24CS439 and PES1UG24CS484. The source materials list SRNs but not GitHub handles, so actual GitHub assignments remain pending verified usernames.
