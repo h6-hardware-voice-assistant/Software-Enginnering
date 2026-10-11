@@ -36,7 +36,7 @@ Story points use a simple Fibonacci-like planning scale (1, 2, 3, 5, 8). Estimat
 | [#14](https://github.com/ignite-2005/Software-Enginnering/issues/14) | Measure command latency | 2 | Medium | 1 | NFR-01 | PES1UG24CS439 |
 | [#15](https://github.com/ignite-2005/Software-Enginnering/issues/15) | Keep commands and feedback understandable | 2 | Medium | 1 | NFR-02 | PES1UG24CS805 |
 | [#22](https://github.com/ignite-2005/Software-Enginnering/issues/22) | Run tests on pushes and PRs | 3 | High | 1 | Test plan, NFR-03 | PES1UG24CS484 |
-| [#16](https://github.com/ignite-2005/Software-Enginnering/issues/16) | Volume Up and Volume Down | 3 | High | 2 | FR-06/07, TC-05/06 | PES1UG24CS805* |
+| [#16](https://github.com/ignite-2005/Software-Enginnering/issues/16) | Volume Up and Volume Down | 3 | High | 2 | FR-06/07, TC-05/06 | PES1UG24CS805 |
 | [#17](https://github.com/ignite-2005/Software-Enginnering/issues/17) | Select next media item | 2 | Medium | 2 | FR-08, TC-07 | PES1UG24CS439 |
 | [#18](https://github.com/ignite-2005/Software-Enginnering/issues/18) | Select previous media item | 2 | Medium | 2 | FR-09, TC-08 | PES1UG24CS439 |
 | [#19](https://github.com/ignite-2005/Software-Enginnering/issues/19) | Verify correct, repeatable behavior | 3 | High | 2 | NFR-03, TC-01–08 | PES1UG24CS446 |
@@ -55,4 +55,8 @@ A GitHub Projects V2 board should be created and linked to this repository. Add 
 - Iteration: Sprint 1 (19–23 Oct 2026), Sprint 2 (26–30 Oct 2026)
 - Assignees: assign actual GitHub usernames once the team handles are confirmed
 
-The available GitHub connector can create/inspect repository files and issues, but it does not expose Projects V2 board/field mutations. The Issues backlog is live on GitHub; the actual board, Estimate/Iteration fields and person-level assignments are not claimed complete in this file.
+The available GitHub connector can create/inspect repository files and issues, but it does not expose Projects V2 board/field mutations. The Epic/Story Issues and this backlog register are live on GitHub. The actual board, Estimate/Iteration fields and person-level assignments are not claimed complete in this file.
+
+## Keep the two lab projects separate
+- **Solo VibeCoding task:** `53_arm_wrestle`, committed under `Lab-4/` in [PES1UG24CS484-pes-vcs](https://github.com/ignite-2005/PES1UG24CS484-pes-vcs/tree/main/Lab-4).
+- **Group mini-project:** Hardware-Based Voice Assistant for Multimedia Controls, with team SRNs listed above, tracked in this repository.
