@@ -5,7 +5,8 @@ maps exactly one validated command to exactly one player operation, which is
 what keeps NFR-03 (a valid command never triggers a different operation)
 testable.
 
-Implemented here: `pause_media` (FR-04, story #10). The remaining operations are
+Implemented here: `play_media` (FR-03, story #9) and `pause_media` (FR-04,
+story #10). The remaining operations are
 owned by other Sprint 1/2 stories and raise `NotImplementedError` until then, so
 an unfinished operation can never silently perform the wrong action.
 """
@@ -53,11 +54,24 @@ class MultimediaController:
             )
         return "pause"
 
-    # -- Owned by other stories ------------------------------------------
+    # -- FR-03 ------------------------------------------------------------
     def play_media(self) -> str:
-        """FR-03 — story #9."""
-        raise NotImplementedError("FR-03 play_media is story #9")
+        """Start the selected media using only the backend's play operation.
 
+        A rejected request, backend fault or unchanged player state is reported
+        as a player error. No alternate operation or retry is attempted.
+        """
+        try:
+            self._player.play()
+            if self._player.state != PLAYING:
+                raise PlayerOperationError("play", "player did not start playback")
+        except PlayerOperationError:
+            raise
+        except Exception as exc:
+            raise PlayerOperationError("play", str(exc)) from exc
+        return "play"
+
+    # -- Owned by other stories ------------------------------------------
     def resume_media(self) -> str:
         """FR-05 — story #11."""
         raise NotImplementedError("FR-05 resume_media is story #11")
