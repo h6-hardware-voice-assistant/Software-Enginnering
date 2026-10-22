@@ -58,9 +58,28 @@ class MultimediaController:
         """FR-03 — story #9."""
         raise NotImplementedError("FR-03 play_media is story #9")
 
+
     def resume_media(self) -> str:
-        """FR-05 — story #11."""
-        raise NotImplementedError("FR-05 resume_media is story #11")
+        """Resume paused media (FR-05, story #11)."""
+        if self._player.state != PAUSED:
+            raise PlayerOperationError(
+                "resume", f"nothing is paused (player is {self._player.state})"
+            )
+
+        try:
+            self._player.resume()
+        except PlayerOperationError:
+            raise
+        except Exception as exc:
+            raise PlayerOperationError("resume", str(exc)) from exc
+
+        if self._player.state != PLAYING:
+            raise PlayerOperationError(
+                "resume", f"player did not resume (state is {self._player.state})"
+            )
+
+        return "resume"
+
 
     def increase_volume(self) -> str:
         """FR-06 — story #16."""
