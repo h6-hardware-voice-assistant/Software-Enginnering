@@ -1,0 +1,4 @@
+# Optional hardware dependencies for FR-01 microphone capture.
+# The default recognizer transcribes speech using Google's online service.
+# Install only on a device/development machine that has microphone access.
+SpeechRecognition[audio]>=3.17.0,<4
