@@ -5,9 +5,9 @@ maps exactly one validated command to exactly one player operation, which is
 what keeps NFR-03 (a valid command never triggers a different operation)
 testable.
 
-Implemented here: `play_media` (FR-03, story #9) and `pause_media` (FR-04,
-story #10). The remaining operations are
-owned by other Sprint 1/2 stories and raise `NotImplementedError` until then, so
+Implemented here: `play_media` (FR-03, story #9), `pause_media` (FR-04,
+story #10) and `resume_media` (FR-05, story #11). The remaining operations are
+owned by Sprint 2 stories and raise `NotImplementedError` until then, so
 an unfinished operation can never silently perform the wrong action.
 """
 
@@ -71,11 +71,28 @@ class MultimediaController:
             raise PlayerOperationError("play", str(exc)) from exc
         return "play"
 
-    # -- Owned by other stories ------------------------------------------
     def resume_media(self) -> str:
-        """FR-05 — story #11."""
-        raise NotImplementedError("FR-05 resume_media is story #11")
+        """Resume paused media (FR-05, story #11)."""
+        if self._player.state != PAUSED:
+            raise PlayerOperationError(
+                "resume", f"nothing is paused (player is {self._player.state})"
+            )
 
+        try:
+            self._player.resume()
+        except PlayerOperationError:
+            raise
+        except Exception as exc:
+            raise PlayerOperationError("resume", str(exc)) from exc
+
+        if self._player.state != PLAYING:
+            raise PlayerOperationError(
+                "resume", f"player did not resume (state is {self._player.state})"
+            )
+
+        return "resume"
+
+    # -- Owned by Sprint 2 stories ---------------------------------------
     def increase_volume(self) -> str:
         """FR-06 — story #16."""
         raise NotImplementedError("FR-06 increase_volume is story #16")

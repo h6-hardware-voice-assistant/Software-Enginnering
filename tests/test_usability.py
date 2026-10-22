@@ -80,7 +80,7 @@ def test_failed_play_does_not_print_success_or_private_details(player: InMemoryP
 
 
 def test_usability_walkthrough(monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]) -> None:
-    entries = iter(["help", "Play", "Pause", "shuffle", "", "Resume", "quit"])
+    entries = iter(["help", "Play", "Pause", "shuffle", "", "Volume Up", "quit"])
     monkeypatch.setattr("builtins.input", lambda _: next(entries))
 
     demo.main([])

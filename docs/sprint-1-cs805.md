@@ -33,7 +33,7 @@ transcript are normalized. Extra words do not form a supported command:
 |---|---|---|
 | Play | Start the selected media | Implemented through the backend interface (#9). |
 | Pause | Pause the current media, keeping the player open | Existing implementation (#10). |
-| Resume | Continue paused playback | Recognized; controller implementation remains #11. |
+| Resume | Continue paused playback | Existing implementation (#11), included from the updated main branch. |
 | Volume Up | Increase the current volume | Recognized; controller implementation remains Sprint 2 #16. |
 | Volume Down | Decrease the current volume | Recognized; controller implementation remains Sprint 2 #16. |
 | Next | Select the next media item | Recognized; controller implementation remains Sprint 2 #17. |
@@ -81,7 +81,7 @@ microphone audio or play a media file. Its startup message states this.
 | 3 | `Pause` | "Playback paused." State becomes `paused`. |
 | 4 | `shuffle` | Unsupported-command feedback lists the valid phrases. State stays `paused`. |
 | 5 | Press Enter without text | Simulated no-speech feedback asks for a command. State stays `paused`. |
-| 6 | `Resume` | This branch reports the operation unavailable. State stays `paused`. |
+| 6 | `Volume Up` | This branch reports the operation unavailable. State stays `paused`. |
 | 7 | `quit` | The demo exits. |
 
 `help` and `quit` are demo controls, not additional voice commands.
@@ -106,7 +106,8 @@ EOF or Ctrl+C also ends the demo cleanly.
 | NFR-02: understandable feedback | `tests/test_usability.py` checks success messages, allowed-phrase guidance and capture/player error messages. |
 | NFR-02: basic walkthrough | `tests/test_usability.py` exercises the walkthrough, simulated player failure and clean exit. |
 
-Verification ran on 22 October 2026 (IST):
+Initial verification, before integrating the updated main branch, ran on
+22 October 2026 (IST):
 
 | Environment | Result |
 |---|---|
@@ -118,9 +119,25 @@ Verification ran on 22 October 2026 (IST):
 [Test output](./evidence/sprint-1-cs805-tests.txt) and
 [walkthrough output](./evidence/sprint-1-cs805-walkthrough.txt) retain the run time,
 base commit, checksums of the tested Python files, commands and exit codes.
+Those initial checksums describe local working-tree bytes, including Windows
+line endings; use the LF-normalized checksums in the integration record below
+to compare a clean Git checkout.
 These are software checks with a simulated player and injected failures. They
 do not establish speech-recognition accuracy, audible playback or usability
 with independent participants.
+
+### Verification after integration with main
+
+The main branch added microphone input, allow-list validation and Resume while
+this work was being prepared. The controller overlap was resolved by keeping
+Play unchanged and retaining the Resume implementation from main. The walkthrough
+uses Volume Up for its unavailable-operation check because Resume is now available.
+
+After integration, all 104 tests passed on both Windows/Python 3.12.10 and
+Linux under WSL/Python 3.14.7. The dependency check and both transcript demonstrations
+also passed. The [integration record](./evidence/sprint-1-cs805-integration.txt)
+contains the actual output, integrated main commit and LF-normalized source
+checksums that match the staged Git blobs.
 
 ## Remaining physical check
 

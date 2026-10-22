@@ -1,0 +1,91 @@
+Verified at: 2026-10-22T14:33:35.829240+05:30
+Original implementation commit: f8c643e8708dad61908044f60d9ceb299eaba4e5
+Integrated main commit: 5650ea610a0a91459cbe14abd3d26d08704d22b3
+Play implementation unchanged; Resume implementation unchanged from main (AST comparison).
+
+SHA-256 of tested changed Python files, normalized to LF (matches Git blob contents):
+c02b3644a6387ac8922fa1fb90fcdabd86ac35600c17329425b61e48043e72d7  voice_assistant/controller.py
+6e33326bdc99175c8671e18557940b04ad09ff43c9f4f80ff27d150b037657cb  voice_assistant/assistant.py
+aef2011ac720ead0f49bef657d1feb8fdba0c1f1246b20fe49d62534a674ca52  voice_assistant/errors.py
+c702739db61978903907e7a952fdfdff145411d1bfea43824265ba8b96263119  voice_assistant/demo.py
+ac574acc0e7beff0838a48c0af551b1bc2e199e4b737c775a7d05c229d6ed342  tests/test_play.py
+1736034e9603c55f79d4ac64c549e7ec13c5131c079deac5d61dc0585acdd615  tests/test_usability.py
+
+$ "C:\Users\Speed\Desktop\claude code\se mini proj\.venv\Scripts\python.exe" -m pytest
+============================= test session starts =============================
+platform win32 -- Python 3.12.10, pytest-9.1.1, pluggy-1.7.0
+rootdir: C:\Users\Speed\Desktop\claude code\se mini proj
+configfile: pytest.ini
+testpaths: tests
+collected 104 items
+
+tests\test_command_allowlist.py ............                             [ 11%]
+tests\test_error_handling.py .................                           [ 27%]
+tests\test_microphone.py ......                                          [ 33%]
+tests\test_pause.py ........                                             [ 41%]
+tests\test_play.py ................                                      [ 56%]
+tests\test_recognition.py .......................                        [ 78%]
+tests\test_resume.py ....                                                [ 82%]
+tests\test_usability.py ..................                               [100%]
+
+============================= 104 passed in 0.54s =============================
+
+Exit code: 0
+
+$ "C:\Users\Speed\Desktop\claude code\se mini proj\.venv\Scripts\python.exe" -m pip check
+No broken requirements found.
+
+Exit code: 0
+
+$ wsl -d kali-linux --cd "/mnt/c/Users/Speed/Desktop/claude code/se mini proj" -- python3 -m pytest
+============================= test session starts ==============================
+platform linux -- Python 3.14.7, pytest-9.1.1, pluggy-1.6.0
+rootdir: /mnt/c/Users/Speed/Desktop/claude code/se mini proj
+configfile: pytest.ini
+testpaths: tests
+plugins: Faker-39.0.0, anyio-4.12.1, typeguard-4.4.4
+collected 104 items
+
+tests/test_command_allowlist.py ............                             [ 11%]
+tests/test_error_handling.py .................                           [ 27%]
+tests/test_microphone.py ......                                          [ 33%]
+tests/test_pause.py ........                                             [ 41%]
+tests/test_play.py ................                                      [ 56%]
+tests/test_recognition.py .......................                        [ 78%]
+tests/test_resume.py ....                                                [ 82%]
+tests/test_usability.py ..................                               [100%]
+
+============================= 104 passed in 1.30s ==============================
+
+Exit code: 0
+
+$ "C:\Users\Speed\Desktop\claude code\se mini proj\.venv\Scripts\python.exe" -m voice_assistant.demo
+Supplied input: 'help\nPlay\nPause\nshuffle\n\nVolume Up\nquit\n'
+Transcript demo: simulated player, no microphone capture or audio output.
+Try Play, then Pause. Unavailable operations give feedback.
+Enter help for command phrases or quit to exit.
+Command: Command phrases: next, pause, play, previous, resume, volume down, volume up.
+Command: Playback started.
+Player state: playing
+Command: Playback paused.
+Player state: paused
+Command: That command is not supported. Say Play, Pause, Resume, Volume Up, Volume Down, Next or Previous.
+Player state: paused
+Command: No speech was detected. Please say a command.
+Player state: paused
+Command: That operation is not available yet.
+Player state: paused
+Command: Demo ended.
+
+Exit code: 0
+
+$ "C:\Users\Speed\Desktop\claude code\se mini proj\.venv\Scripts\python.exe" -m voice_assistant.demo --fail-play
+Supplied input: 'Play\nquit\n'
+Transcript demo: simulated player, no microphone capture or audio output.
+Try Play, then Pause. Unavailable operations give feedback.
+Enter help for command phrases or quit to exit.
+Command: The media player could not complete that operation.
+Player state: stopped
+Command: Demo ended.
+
+Exit code: 0
