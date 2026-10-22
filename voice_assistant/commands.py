@@ -58,9 +58,13 @@ def lookup(transcript: str) -> Command | None:
     return COMMAND_PHRASES.get(normalize(transcript))
 
 
-def is_supported(command: Command | None) -> bool:
-    """True only for members of the predefined command set (SR-01)."""
-    return command in SUPPORTED_COMMANDS
+def is_supported(command: object) -> bool:
+    """True only for Command enum members in the predefined set (SR-01).
+
+    Validate the type before set membership so malformed runtime inputs (for
+    example, a list) are safely rejected instead of raising TypeError.
+    """
+    return isinstance(command, Command) and command in SUPPORTED_COMMANDS
 
 
 def supported_phrases() -> tuple[str, ...]:
