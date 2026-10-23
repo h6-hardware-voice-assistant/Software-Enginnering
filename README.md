@@ -30,7 +30,7 @@ independently testable.
 | `voice_assistant/commands.py` | Predefined command vocabulary and transcript normalization | FR-02, SR-01 | #8 |
 | `voice_assistant/recognition.py` | `recognize_command()` and the `SpeechSource` capture interface | FR-02, TC-01 | #8 (capture itself: #7) |
 | `voice_assistant/processor.py` | `process_command()` — validates a candidate, then dispatches one operation | FR-02, FR-10, SR-01/02 | #8, #12 |
-| `voice_assistant/controller.py` | Multimedia operations on the player; `pause_media()` is implemented | FR-03–FR-09 | #10 (others: #9, #11, #16–#18) |
+| `voice_assistant/controller.py` | Multimedia operations on the player; `play_media()` and `pause_media()` are implemented | FR-03–FR-09 | #9, #10 (others: #11, #16–#18) |
 | `voice_assistant/player.py` | `MediaPlayerBackend` interface and the in-process player used in tests | SAD 2.7 | #10 |
 | `voice_assistant/errors.py` | Error types and user-facing indications | FR-11, NFR-02 | #13 |
 | `voice_assistant/assistant.py` | Capture → recognize → validate → dispatch, with safe failure handling | FR-11, NFR-03 | #13 |
@@ -47,6 +47,23 @@ python -m pytest
 
 Hardware-facing dependencies (microphone capture, speech-to-text) are kept out of
 `requirements.txt` so the suite runs without audio hardware.
+
+### Sprint 1 command guide and walkthrough
+
+Arpan Joardar's Sprint 1 work covers Play (#9, FR-03 / TC-02) and command
+usability (#15, NFR-02). The [command guide and verification record](./docs/sprint-1-cs805.md)
+lists all seven phrases, the feedback messages, a walkthrough and the remaining
+hardware checks.
+
+```bash
+python -m voice_assistant.demo
+```
+
+This is a transcript-only demo with a simulated player; it does not capture speech
+or produce audio. Enter `help`, then try `Play`, `Pause`, an unsupported command
+such as `shuffle`, and `quit`. Use `python -m voice_assistant.demo --fail-play` to
+check the player-failure feedback. Normal operation reports "Playback started."
+or "Playback paused."; unsupported input lists the permitted commands.
 
 ### Continuous integration
 

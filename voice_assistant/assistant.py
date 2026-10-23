@@ -59,6 +59,16 @@ _STATUS_BY_ERROR: tuple[tuple[type[BaseException], Status], ...] = (
 #: Failures that stop the listening loop instead of waiting for a new command.
 _FATAL_STATUSES = frozenset({Status.MICROPHONE_ERROR, Status.HARDWARE_ERROR})
 
+_SUCCESS_MESSAGES: dict[Command, str] = {
+    Command.PLAY: "Playback started.",
+    Command.PAUSE: "Playback paused.",
+    Command.RESUME: "Playback resumed.",
+    Command.VOLUME_UP: "Volume increased.",
+    Command.VOLUME_DOWN: "Volume decreased.",
+    Command.NEXT: "Next media item selected.",
+    Command.PREVIOUS: "Previous media item selected.",
+}
+
 
 @dataclass(frozen=True)
 class Outcome:
@@ -124,7 +134,7 @@ class VoiceAssistant:
         logger.info("performed %s for command %s", operation, result.command)
         return Outcome(
             status=Status.PERFORMED,
-            message=f"Performed {operation}.",
+            message=_SUCCESS_MESSAGES[result.command],
             command=result.command,
             operation=operation,
         )

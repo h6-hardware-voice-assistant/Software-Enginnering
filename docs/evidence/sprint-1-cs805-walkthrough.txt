@@ -1,0 +1,42 @@
+Verified at: 2026-10-22T13:49:47.723807+05:30
+Base commit: 2f324fe312b842f2def3592b827a25bdd16407fc
+
+SHA-256 of changed Python files:
+2de9ebf26c3fac332a8b7d540a0ac65cdb95ff26173f59ed63dace11611c936c  voice_assistant/controller.py
+047124d421c7260ce4d7f80ecd13cf3419a9d2b169aeaaea8ea547028a5ba262  voice_assistant/assistant.py
+a7ae683206153ff0698ed05b2dc3687c46a0a734d9a2d4f3a1911921fcd2b34a  voice_assistant/errors.py
+c702739db61978903907e7a952fdfdff145411d1bfea43824265ba8b96263119  voice_assistant/demo.py
+967f60aa44ce71f8f786f58e1127c938fa0d84a8cca3d7ace1b35d1903840140  tests/test_play.py
+c078e575a18544f4e58a610691dc6437a25a728fdf77972c63d52b7d748f69d1  tests/test_usability.py
+
+Transcript-only demonstration with InMemoryPlayer:
+$ "C:\Users\Speed\Desktop\claude code\se mini proj\.venv\Scripts\python.exe" -m voice_assistant.demo
+Supplied input: 'help\nPlay\nPause\nshuffle\n\nResume\nquit\n'
+Transcript demo: simulated player, no microphone capture or audio output.
+Try Play, then Pause. Unavailable operations give feedback.
+Enter help for command phrases or quit to exit.
+Command: Command phrases: next, pause, play, previous, resume, volume down, volume up.
+Command: Playback started.
+Player state: playing
+Command: Playback paused.
+Player state: paused
+Command: That command is not supported. Say Play, Pause, Resume, Volume Up, Volume Down, Next or Previous.
+Player state: paused
+Command: No speech was detected. Please say a command.
+Player state: paused
+Command: That operation is not available yet.
+Player state: paused
+Command: Demo ended.
+
+Exit code: 0
+
+$ "C:\Users\Speed\Desktop\claude code\se mini proj\.venv\Scripts\python.exe" -m voice_assistant.demo --fail-play
+Supplied input: 'Play\nquit\n'
+Transcript demo: simulated player, no microphone capture or audio output.
+Try Play, then Pause. Unavailable operations give feedback.
+Enter help for command phrases or quit to exit.
+Command: The media player could not complete that operation.
+Player state: stopped
+Command: Demo ended.
+
+Exit code: 0

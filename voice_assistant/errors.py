@@ -44,7 +44,10 @@ class UnrecognizedSpeechError(VoiceAssistantError):
 class UnsupportedCommandError(VoiceAssistantError):
     """SAD case 3 / FR-10 — the transcript is not in the predefined command set."""
 
-    user_message = "That command is not supported."
+    user_message = (
+        "That command is not supported. "
+        "Say Play, Pause, Resume, Volume Up, Volume Down, Next or Previous."
+    )
 
     def __init__(self, transcript: str = "", **kwargs: object) -> None:
         self.transcript = transcript
