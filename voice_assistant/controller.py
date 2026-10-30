@@ -103,8 +103,20 @@ class MultimediaController:
 
     def next_media(self) -> str:
         """FR-08 — story #17."""
-        raise NotImplementedError("FR-08 next_media is story #17")
+        try:
+            self._player.next_item()
+        except PlayerOperationError:
+            raise
+        except Exception as exc:
+            raise PlayerOperationError("next_item", str(exc)) from exc
+        return "next"
 
     def previous_media(self) -> str:
         """FR-09 — story #18."""
-        raise NotImplementedError("FR-09 previous_media is story #18")
+        try:
+            self._player.previous_item()
+        except PlayerOperationError:
+            raise
+        except Exception as exc:
+            raise PlayerOperationError("previous_item", str(exc)) from exc
+        return "previous"
