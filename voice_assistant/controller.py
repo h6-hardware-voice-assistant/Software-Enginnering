@@ -15,49 +15,44 @@ from voice_assistant.player import MediaPlayerBackend, PAUSED, PLAYING
 
 
 class MultimediaController:
-    """Maps multimedia operations onto a `MediaPlayerBackend`."""
+    """Maps each validated command to exactly one player operation."""
 
     def __init__(self, player: MediaPlayerBackend) -> None:
         self._player = player
 
     @property
     def player(self) -> MediaPlayerBackend:
-        """The backend under control; exposed for state assertions and feedback."""
         return self._player
 
-    # -- FR-04 ------------------------------------------------------------
-    def pause_media(self) -> str:
-        """Pause the currently playing item without closing the player (FR-04).
+    @staticmethod
+    def _raise_backend_error(operation: str, exc: Exception) -> None:
+        if isinstance(exc, PlayerOperationError):
+            raise exc
+        raise PlayerOperationError(operation, str(exc)) from exc
 
-        Returns the operation name that was performed. Raises
-        `PlayerOperationError` when nothing is playing or the player rejects the
-        request; no other operation is attempted in that case (FR-11).
-        """
+    def pause_media(self) -> str:
         if self._player.state != PLAYING:
             raise PlayerOperationError(
-                "pause", f"nothing is playing (player is {self._player.state})"
+                "pause",
+                f"nothing is playing (player is {self._player.state})",
             )
 
         try:
             self._player.pause()
-        except PlayerOperationError:
-            raise
-        except Exception as exc:  # backend/hardware fault, reported not retried
-            raise PlayerOperationError("pause", str(exc)) from exc
+        except Exception as exc:
+            self._raise_backend_error("pause", exc)
 
         if self._player.state != PAUSED:
             raise PlayerOperationError(
-                "pause", f"player did not pause (state is {self._player.state})"
+                "pause",
+                f"player did not pause (state is {self._player.state})",
             )
+
         return "pause"
 
-    # -- FR-03 ------------------------------------------------------------
+    # FR-03
     def play_media(self) -> str:
-        """Start the selected media using only the backend's play operation.
-
-        A rejected request, backend fault or unchanged player state is reported
-        as a player error. No alternate operation or retry is attempted.
-        """
+        """Start the selected media using only the backend's play operation."""
         try:
             self._player.play()
             if self._player.state != PLAYING:
@@ -66,13 +61,16 @@ class MultimediaController:
             raise
         except Exception as exc:
             raise PlayerOperationError("play", str(exc)) from exc
+
         return "play"
 
+    # FR-05
     def resume_media(self) -> str:
-        """Resume paused media (FR-05, story #11)."""
+        """Resume paused media."""
         if self._player.state != PAUSED:
             raise PlayerOperationError(
-                "resume", f"nothing is paused (player is {self._player.state})"
+                "resume",
+                f"nothing is paused (player is {self._player.state})",
             )
 
         try:
@@ -84,48 +82,55 @@ class MultimediaController:
 
         if self._player.state != PLAYING:
             raise PlayerOperationError(
-                "resume", f"player did not resume (state is {self._player.state})"
+                "resume",
+                f"player did not resume (state is {self._player.state})",
             )
 
         return "resume"
 
-    # -- FR-06 / FR-07 ----------------------------------------------------
+    # FR-06 / FR-07
     def increase_volume(self) -> str:
-        """Increase volume within the backend's limits (FR-06, story #16)."""
+        """Increase volume within the backend's limits."""
         try:
             self._player.volume_up()
         except PlayerOperationError:
             raise
         except Exception as exc:
             raise PlayerOperationError("volume_up", str(exc)) from exc
+
         return "volume_up"
 
     def decrease_volume(self) -> str:
-        """Decrease volume within the backend's limits (FR-07, story #16)."""
+        """Decrease volume within the backend's limits."""
         try:
             self._player.volume_down()
         except PlayerOperationError:
             raise
         except Exception as exc:
             raise PlayerOperationError("volume_down", str(exc)) from exc
+
         return "volume_down"
 
+    # FR-08
     def next_media(self) -> str:
-        """FR-08 — story #17."""
+        """Move to the next media item."""
         try:
             self._player.next_item()
         except PlayerOperationError:
             raise
         except Exception as exc:
             raise PlayerOperationError("next_item", str(exc)) from exc
+
         return "next"
 
+    # FR-09
     def previous_media(self) -> str:
-        """FR-09 — story #18."""
+        """Move to the previous media item."""
         try:
             self._player.previous_item()
         except PlayerOperationError:
             raise
         except Exception as exc:
             raise PlayerOperationError("previous_item", str(exc)) from exc
+
         return "previous"
