@@ -22,6 +22,27 @@ Story points use a simple Fibonacci-like planning scale (1, 2, 3, 5, 8). Estimat
 | Epic 5 | Quality attributes and hardware portability | [#5](https://github.com/ignite-2005/Software-Enginnering/issues/5) |
 | Epic 6 | Automated verification and delivery | [#6](https://github.com/ignite-2005/Software-Enginnering/issues/6) |
 
+### Epic closure status
+
+| Epic | Owner | Children | Status |
+|---|---|---|---|
+| Epic 2 — Playback and navigation | @DerpSpears | #9, #10, #11, #17, #18 | **Closed.** All five operations implemented and verified on `main`; see the [closure record](./docs/epic-2-4-closeout.md). |
+| Epic 4 — Command validation and error handling | @DerpSpears | #12, #13 | **Closed.** Allow-list validation precedes every dispatch and all six SAD failure cases are covered; see the [closure record](./docs/epic-2-4-closeout.md). |
+| Epics 1, 3, 5, 6 | @ignite-2005, @arpan-joardar | — | Open; dependent on #16, #20, #21 and #23. |
+
+Epic 2 and Epic 4 were closed against implementation and test evidence, not
+against issue state: child story #9 is implemented and verified but its issue is
+still open, which is for `@arpan-joardar` to close. The closure review also
+produced two test changes, recorded in the closure record — an epic-level
+playback-state check that no story test asserted, and a repair to an FR-11 test
+that had silently stopped covering the not-implemented guard once story #11
+merged.
+
+Note for story #23: the GitHub links in this file and in `README.md` still point
+at the `ignite-2005` organisation. The repository now lives at
+`h6-hardware-voice-assistant/Software-Enginnering`, so those links need updating
+as part of the documentation story.
+
 ## Story backlog
 
 | Issue | User story | SP | Priority | Sprint | Requirement mapping | Suggested owner (SRN / GitHub) |

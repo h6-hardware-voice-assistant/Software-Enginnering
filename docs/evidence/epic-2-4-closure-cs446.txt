@@ -1,0 +1,166 @@
+Epic #2 / Epic #4 closure evidence — Shriniketh Kana (PES1UG24CS446)
+Commit under test: ee043782528594c8557c07e6301e68e758cc4577 (merged main + this branch's test additions)
+Date: 2026-11-02 03:53 UTC
+Python: Python 3.14.8
+
+==============================================================
+FULL SUITE
+==============================================================
+============================= test session starts ==============================
+platform linux -- Python 3.14.8, pytest-9.2.0, pluggy-1.7.0 -- /tmp/claude-1000/-home-kana-army-Software-Enginnering/8d6c2327-e121-4c95-b2e7-a29cd9e278a4/scratchpad/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /home/kana/army/Software-Enginnering
+configfile: pytest.ini
+testpaths: tests
+collecting ... collected 130 items
+
+tests/test_command_allowlist.py::test_normalized_supported_transcript_dispatches_exactly_one_allowlisted_operation[  PLAY! -Command.PLAY] PASSED [  0%]
+tests/test_command_allowlist.py::test_normalized_supported_transcript_dispatches_exactly_one_allowlisted_operation[Pause.-Command.PAUSE] PASSED [  1%]
+tests/test_command_allowlist.py::test_normalized_supported_transcript_dispatches_exactly_one_allowlisted_operation[RESUME-Command.RESUME] PASSED [  2%]
+tests/test_command_allowlist.py::test_normalized_supported_transcript_dispatches_exactly_one_allowlisted_operation[Volume   Up!-Command.VOLUME_UP] PASSED [  3%]
+tests/test_command_allowlist.py::test_normalized_supported_transcript_dispatches_exactly_one_allowlisted_operation[volume down?-Command.VOLUME_DOWN] PASSED [  3%]
+tests/test_command_allowlist.py::test_normalized_supported_transcript_dispatches_exactly_one_allowlisted_operation[ NEXT -Command.NEXT] PASSED [  4%]
+tests/test_command_allowlist.py::test_normalized_supported_transcript_dispatches_exactly_one_allowlisted_operation[Previous.-Command.PREVIOUS] PASSED [  5%]
+tests/test_command_allowlist.py::test_invalid_candidate_is_rejected_without_any_controller_call[None] PASSED [  6%]
+tests/test_command_allowlist.py::test_invalid_candidate_is_rejected_without_any_controller_call[play] PASSED [  6%]
+tests/test_command_allowlist.py::test_invalid_candidate_is_rejected_without_any_controller_call[candidate2] PASSED [  7%]
+tests/test_command_allowlist.py::test_invalid_candidate_is_rejected_without_any_controller_call[100] PASSED [  8%]
+tests/test_command_allowlist.py::test_invalid_candidate_is_rejected_without_any_controller_call[candidate4] PASSED [  9%]
+tests/test_epic2_playback_integrity.py::test_spoken_command_reaches_exactly_one_player_operation[Play-Command.PLAY-play-play] PASSED [ 10%]
+tests/test_epic2_playback_integrity.py::test_spoken_command_reaches_exactly_one_player_operation[Pause-Command.PAUSE-pause-pause] PASSED [ 10%]
+tests/test_epic2_playback_integrity.py::test_spoken_command_reaches_exactly_one_player_operation[Next-Command.NEXT-next-next_item] PASSED [ 11%]
+tests/test_epic2_playback_integrity.py::test_spoken_command_reaches_exactly_one_player_operation[Previous-Command.PREVIOUS-previous-previous_item] PASSED [ 12%]
+tests/test_epic2_playback_integrity.py::test_spoken_resume_reaches_exactly_one_player_operation PASSED [ 13%]
+tests/test_epic2_playback_integrity.py::test_navigation_preserves_whether_media_is_playing[Next] PASSED [ 13%]
+tests/test_epic2_playback_integrity.py::test_navigation_preserves_whether_media_is_playing[Previous] PASSED [ 14%]
+tests/test_epic2_playback_integrity.py::test_navigation_preserves_a_paused_player[Next] PASSED [ 15%]
+tests/test_epic2_playback_integrity.py::test_navigation_preserves_a_paused_player[Previous] PASSED [ 16%]
+tests/test_epic2_playback_integrity.py::test_navigation_changes_only_the_selected_item[Next-track-3] PASSED [ 16%]
+tests/test_epic2_playback_integrity.py::test_navigation_changes_only_the_selected_item[Previous-track-1] PASSED [ 17%]
+tests/test_epic2_playback_integrity.py::test_failed_navigation_leaves_playback_state_untouched PASSED [ 18%]
+tests/test_epic2_playback_integrity.py::test_pause_navigate_resume_returns_to_the_newly_selected_item PASSED [ 19%]
+tests/test_error_handling.py::test_capture_failures_are_reported_without_any_media_action[error0-Status.MICROPHONE_ERROR] PASSED [ 20%]
+tests/test_error_handling.py::test_capture_failures_are_reported_without_any_media_action[error1-Status.NO_SPEECH] PASSED [ 20%]
+tests/test_error_handling.py::test_capture_failures_are_reported_without_any_media_action[error2-Status.UNRECOGNIZED_SPEECH] PASSED [ 21%]
+tests/test_error_handling.py::test_capture_failures_are_reported_without_any_media_action[error3-Status.HARDWARE_ERROR] PASSED [ 22%]
+tests/test_error_handling.py::test_unsupported_command_performs_no_operation PASSED [ 23%]
+tests/test_error_handling.py::test_processor_rejects_an_unrecognized_candidate_before_dispatch PASSED [ 23%]
+tests/test_error_handling.py::test_player_failure_is_reported_as_a_player_error PASSED [ 24%]
+tests/test_error_handling.py::test_an_unbuilt_operation_does_not_fall_through_to_another_operation[Volume Up] PASSED [ 25%]
+tests/test_error_handling.py::test_an_unbuilt_operation_does_not_fall_through_to_another_operation[Volume Down] PASSED [ 26%]
+tests/test_error_handling.py::test_resume_with_nothing_paused_performs_no_operation PASSED [ 26%]
+tests/test_error_handling.py::test_unexpected_exceptions_do_not_escape_or_dispatch PASSED [ 27%]
+tests/test_error_handling.py::test_recoverable_failures_let_the_next_command_be_handled PASSED [ 28%]
+tests/test_error_handling.py::test_microphone_failure_stops_the_listening_loop PASSED [ 29%]
+tests/test_error_handling.py::test_every_handled_error_has_an_understandable_message[error0] PASSED [ 30%]
+tests/test_error_handling.py::test_every_handled_error_has_an_understandable_message[error1] PASSED [ 30%]
+tests/test_error_handling.py::test_every_handled_error_has_an_understandable_message[error2] PASSED [ 31%]
+tests/test_error_handling.py::test_every_handled_error_has_an_understandable_message[error3] PASSED [ 32%]
+tests/test_error_handling.py::test_every_handled_error_has_an_understandable_message[error4] PASSED [ 33%]
+tests/test_error_handling.py::test_every_handled_error_has_an_understandable_message[error5] PASSED [ 33%]
+tests/test_microphone.py::test_captures_and_transcribes_one_utterance PASSED [ 34%]
+tests/test_microphone.py::test_timeout_without_speech_is_reported_as_recoverable_no_speech PASSED [ 35%]
+tests/test_microphone.py::test_unintelligible_audio_is_reported_without_returning_a_command PASSED [ 36%]
+tests/test_microphone.py::test_missing_microphone_is_reported_as_microphone_unavailable PASSED [ 36%]
+tests/test_microphone.py::test_recognition_service_error_has_actionable_feedback PASSED [ 37%]
+tests/test_microphone.py::test_empty_transcript_is_reported_as_no_speech PASSED [ 38%]
+tests/test_next_media.py::test_next_moves_to_next_media_item PASSED      [ 39%]
+tests/test_next_media.py::test_next_when_no_next_item_raises_error PASSED [ 40%]
+tests/test_next_media.py::test_next_player_failure_is_reported PASSED    [ 40%]
+tests/test_pause.py::test_pause_pauses_the_currently_playing_media PASSED [ 41%]
+tests/test_pause.py::test_pause_leaves_the_player_open_and_resumable PASSED [ 42%]
+tests/test_pause.py::test_pause_keeps_the_current_media_item PASSED      [ 43%]
+tests/test_pause.py::test_pause_invokes_only_the_pause_operation PASSED  [ 43%]
+tests/test_pause.py::test_spoken_pause_command_routes_to_pause PASSED    [ 44%]
+tests/test_pause.py::test_pause_is_routed_to_exactly_one_operation PASSED [ 45%]
+tests/test_pause.py::test_pause_when_nothing_is_playing_is_reported_and_changes_nothing PASSED [ 46%]
+tests/test_pause.py::test_pause_is_idempotent_from_the_user_s_point_of_view PASSED [ 46%]
+tests/test_play.py::test_play_starts_selected_media_without_other_changes PASSED [ 47%]
+tests/test_play.py::test_valid_play_reaches_backend_once[Play] PASSED    [ 48%]
+tests/test_play.py::test_valid_play_reaches_backend_once[PLAY] PASSED    [ 49%]
+tests/test_play.py::test_valid_play_reaches_backend_once[ play ] PASSED  [ 50%]
+tests/test_play.py::test_valid_play_reaches_backend_once[Play!] PASSED   [ 50%]
+tests/test_play.py::test_invalid_input_never_starts_media[] PASSED       [ 51%]
+tests/test_play.py::test_invalid_input_never_starts_media[ ] PASSED      [ 52%]
+tests/test_play.py::test_invalid_input_never_starts_media[replay] PASSED [ 53%]
+tests/test_play.py::test_invalid_input_never_starts_media[play something else] PASSED [ 53%]
+tests/test_play.py::test_invalid_input_never_starts_media[stop] PASSED   [ 54%]
+tests/test_play.py::test_invalid_input_never_starts_media[play pause] PASSED [ 55%]
+tests/test_play.py::test_repeated_play_does_not_pause_or_skip PASSED     [ 56%]
+tests/test_play.py::test_backend_that_does_not_start_is_not_reported_as_success[stopped] PASSED [ 56%]
+tests/test_play.py::test_backend_that_does_not_start_is_not_reported_as_success[paused] PASSED [ 57%]
+tests/test_play.py::test_play_failure_is_reported_without_retry_or_other_actions[error0] PASSED [ 58%]
+tests/test_play.py::test_play_failure_is_reported_without_retry_or_other_actions[error1] PASSED [ 59%]
+tests/test_previous_media.py::test_previous_moves_to_previous_media_item PASSED [ 60%]
+tests/test_previous_media.py::test_previous_when_no_previous_item_raises_error PASSED [ 60%]
+tests/test_previous_media.py::test_previous_player_failure_is_reported PASSED [ 61%]
+tests/test_recognition.py::test_recognizes_every_predefined_command[next-Command.NEXT] PASSED [ 62%]
+tests/test_recognition.py::test_recognizes_every_predefined_command[pause-Command.PAUSE] PASSED [ 63%]
+tests/test_recognition.py::test_recognizes_every_predefined_command[play-Command.PLAY] PASSED [ 63%]
+tests/test_recognition.py::test_recognizes_every_predefined_command[previous-Command.PREVIOUS] PASSED [ 64%]
+tests/test_recognition.py::test_recognizes_every_predefined_command[resume-Command.RESUME] PASSED [ 65%]
+tests/test_recognition.py::test_recognizes_every_predefined_command[volume down-Command.VOLUME_DOWN] PASSED [ 66%]
+tests/test_recognition.py::test_recognizes_every_predefined_command[volume up-Command.VOLUME_UP] PASSED [ 66%]
+tests/test_recognition.py::test_vocabulary_is_exactly_the_seven_srs_commands PASSED [ 67%]
+tests/test_recognition.py::test_transcript_formatting_does_not_prevent_recognition[Play] PASSED [ 68%]
+tests/test_recognition.py::test_transcript_formatting_does_not_prevent_recognition[PLAY] PASSED [ 69%]
+tests/test_recognition.py::test_transcript_formatting_does_not_prevent_recognition[ play ] PASSED [ 70%]
+tests/test_recognition.py::test_transcript_formatting_does_not_prevent_recognition[play.] PASSED [ 70%]
+tests/test_recognition.py::test_transcript_formatting_does_not_prevent_recognition[Volume   Up!] PASSED [ 71%]
+tests/test_recognition.py::test_transcript_formatting_does_not_prevent_recognition[volume up?] PASSED [ 72%]
+tests/test_recognition.py::test_unsupported_transcript_returns_an_unrecognized_result[] PASSED [ 73%]
+tests/test_recognition.py::test_unsupported_transcript_returns_an_unrecognized_result[   ] PASSED [ 73%]
+tests/test_recognition.py::test_unsupported_transcript_returns_an_unrecognized_result[open the playlist] PASSED [ 74%]
+tests/test_recognition.py::test_unsupported_transcript_returns_an_unrecognized_result[play something else] PASSED [ 75%]
+tests/test_recognition.py::test_unsupported_transcript_returns_an_unrecognized_result[pausa] PASSED [ 76%]
+tests/test_recognition.py::test_none_transcript_is_unrecognized_rather_than_an_error PASSED [ 76%]
+tests/test_recognition.py::test_result_keeps_the_normalized_transcript_for_feedback PASSED [ 77%]
+tests/test_recognition.py::test_recognizer_reads_one_utterance_from_the_speech_source PASSED [ 78%]
+tests/test_recognition.py::test_recognition_never_operates_the_player PASSED [ 79%]
+tests/test_repeatability.py::test_repeated_commands_call_only_the_intended_operation[Command.PLAY-play] PASSED [ 80%]
+tests/test_repeatability.py::test_repeated_commands_call_only_the_intended_operation[Command.NEXT-next_item] PASSED [ 80%]
+tests/test_repeatability.py::test_repeated_commands_call_only_the_intended_operation[Command.PREVIOUS-previous_item] PASSED [ 81%]
+tests/test_repeatability.py::test_repeated_next_commands_never_call_another_operation PASSED [ 82%]
+tests/test_response_time.py::test_command_response_time_is_measured PASSED [ 83%]
+tests/test_resume.py::test_resume_continues_paused_media PASSED          [ 83%]
+tests/test_resume.py::test_resume_when_not_paused_fails_without_resuming PASSED [ 84%]
+tests/test_resume.py::test_resume_keeps_the_current_media_item PASSED    [ 85%]
+tests/test_resume.py::test_resume_player_failure_is_reported PASSED      [ 86%]
+tests/test_usability.py::test_play_and_pause_report_results_in_plain_language PASSED [ 86%]
+tests/test_usability.py::test_success_feedback_does_not_expose_method_names[Command.PLAY] PASSED [ 87%]
+tests/test_usability.py::test_success_feedback_does_not_expose_method_names[Command.PAUSE] PASSED [ 88%]
+tests/test_usability.py::test_success_feedback_does_not_expose_method_names[Command.RESUME] PASSED [ 89%]
+tests/test_usability.py::test_success_feedback_does_not_expose_method_names[Command.VOLUME_UP] PASSED [ 90%]
+tests/test_usability.py::test_success_feedback_does_not_expose_method_names[Command.VOLUME_DOWN] PASSED [ 90%]
+tests/test_usability.py::test_success_feedback_does_not_expose_method_names[Command.NEXT] PASSED [ 91%]
+tests/test_usability.py::test_success_feedback_does_not_expose_method_names[Command.PREVIOUS] PASSED [ 92%]
+tests/test_usability.py::test_unsupported_feedback_lists_the_allowed_phrases PASSED [ 93%]
+tests/test_usability.py::test_capture_error_feedback_matches_the_guide[error0-No speech was detected. Please say a command.] PASSED [ 93%]
+tests/test_usability.py::test_capture_error_feedback_matches_the_guide[error1-The speech could not be recognized. Please repeat the command.] PASSED [ 94%]
+tests/test_usability.py::test_capture_error_feedback_matches_the_guide[error2-Voice input is unavailable: the microphone could not be used.] PASSED [ 95%]
+tests/test_usability.py::test_capture_error_feedback_matches_the_guide[error3-The hardware interface is unavailable. No action was performed.] PASSED [ 96%]
+tests/test_usability.py::test_failed_play_does_not_print_success_or_private_details PASSED [ 96%]
+tests/test_usability.py::test_usability_walkthrough PASSED               [ 97%]
+tests/test_usability.py::test_walkthrough_can_show_player_failure PASSED [ 98%]
+tests/test_usability.py::test_walkthrough_exits_cleanly_when_input_ends[EOFError] PASSED [ 99%]
+tests/test_usability.py::test_walkthrough_exits_cleanly_when_input_ends[KeyboardInterrupt] PASSED [100%]
+
+============================= 130 passed in 0.16s ==============================
+
+==============================================================
+COVERAGE — modules owned by Epic #2 and Epic #4
+==============================================================
+Name                             Stmts   Miss  Cover   Missing
+--------------------------------------------------------------
+voice_assistant/__init__.py          2      0   100%
+voice_assistant/assistant.py        72      3    96%   130-132
+voice_assistant/commands.py         26      0   100%
+voice_assistant/controller.py       63     11    83%   29, 48-49, 52, 85-86, 89, 110-111, 120-121
+voice_assistant/demo.py             43      1    98%   55
+voice_assistant/errors.py           29      0   100%
+voice_assistant/microphone.py       43      8    81%   52, 54, 56, 58, 61-64
+voice_assistant/player.py           57      7    88%   71, 87, 94, 110-111, 114-115
+voice_assistant/processor.py        15      0   100%
+voice_assistant/recognition.py      21      0   100%
+--------------------------------------------------------------
+TOTAL                              371     30    92%
