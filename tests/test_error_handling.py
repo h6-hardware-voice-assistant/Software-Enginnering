@@ -81,13 +81,41 @@ def test_player_failure_is_reported_as_a_player_error(player: InMemoryPlayer) ->
     assert player.calls == ["pause"]  # the failing operation only, nothing else
 
 
+@pytest.mark.parametrize("phrase", ["Volume Up", "Volume Down"])
 def test_an_unbuilt_operation_does_not_fall_through_to_another_operation(
+    playing_player: InMemoryPlayer, phrase: str
+) -> None:
+    """A command whose controller method is still a story stub stays inert.
+
+    Volume Up and Volume Down are story #16, so the controller raises
+    `NotImplementedError` and `VoiceAssistant` must report it instead of letting
+    the command reach a different operation.
+
+    This check used to be written against "Resume". Resume became a real
+    operation when story #11 merged, so that version stopped exercising the
+    not-implemented guard and asserted only that an invalid Resume is inert.
+    Both behaviours are now covered separately.
+    """
+    outcome = build(playing_player, phrase).handle_once()
+
+    assert outcome.status is Status.PLAYER_ERROR
+    assert not outcome.performed
+    assert outcome.operation is None
+    assert outcome.message == "That operation is not available yet."
+    assert playing_player.calls == []
+    assert playing_player.state == PLAYING
+
+
+def test_resume_with_nothing_paused_performs_no_operation(
     playing_player: InMemoryPlayer,
 ) -> None:
-    """Commands whose controller method is still a story stub stay inert."""
+    """FR-05 is implemented, so an inapplicable Resume is a reported player error."""
     outcome = build(playing_player, "Resume").handle_once()
 
+    assert outcome.status is Status.PLAYER_ERROR
     assert not outcome.performed
+    assert outcome.command is Command.RESUME
+    assert outcome.operation is None
     assert playing_player.calls == []
     assert playing_player.state == PLAYING
 
