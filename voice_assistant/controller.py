@@ -5,10 +5,7 @@ maps exactly one validated command to exactly one player operation, which is
 what keeps NFR-03 (a valid command never triggers a different operation)
 testable.
 
-Implemented here: `play_media` (FR-03, story #9), `pause_media` (FR-04,
-story #10) and `resume_media` (FR-05, story #11). The remaining operations are
-owned by Sprint 2 stories and raise `NotImplementedError` until then, so
-an unfinished operation can never silently perform the wrong action.
+Playback, navigation and volume operations use the same backend interface.
 """
 
 from __future__ import annotations
@@ -92,14 +89,26 @@ class MultimediaController:
 
         return "resume"
 
-    # -- Owned by Sprint 2 stories ---------------------------------------
+    # -- FR-06 / FR-07 ----------------------------------------------------
     def increase_volume(self) -> str:
-        """FR-06 — story #16."""
-        raise NotImplementedError("FR-06 increase_volume is story #16")
+        """Increase volume within the backend's limits (FR-06, story #16)."""
+        try:
+            self._player.volume_up()
+        except PlayerOperationError:
+            raise
+        except Exception as exc:
+            raise PlayerOperationError("volume_up", str(exc)) from exc
+        return "volume_up"
 
     def decrease_volume(self) -> str:
-        """FR-07 — story #16."""
-        raise NotImplementedError("FR-07 decrease_volume is story #16")
+        """Decrease volume within the backend's limits (FR-07, story #16)."""
+        try:
+            self._player.volume_down()
+        except PlayerOperationError:
+            raise
+        except Exception as exc:
+            raise PlayerOperationError("volume_down", str(exc)) from exc
+        return "volume_down"
 
     def next_media(self) -> str:
         """FR-08 — story #17."""

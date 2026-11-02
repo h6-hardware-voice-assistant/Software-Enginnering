@@ -91,7 +91,7 @@ def test_usability_walkthrough(monkeypatch: pytest.MonkeyPatch, capsys: pytest.C
         "Command phrases:", "Playback started.", "Player state: playing",
         "Playback paused.", "Player state: paused",
         "That command is not supported.", "No speech was detected.",
-        "That operation is not available yet.", "Demo ended.",
+        "Volume increased.", "Demo ended.",
     ]:
         assert expected in output
 
