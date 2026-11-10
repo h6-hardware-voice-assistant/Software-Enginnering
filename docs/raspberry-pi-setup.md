@@ -4,10 +4,12 @@ Story #21 / NFR-06.
 
 ## Target and dependencies
 
-- Planned target: Raspberry Pi 5 with Raspberry Pi OS 64-bit and CPython 3.11+.
+- Target: Raspberry Pi 5 with Raspberry Pi OS 64-bit and CPython 3.11+.
 - USB microphone, audio output device and a playable media file.
 - SpeechRecognition and PyAudio from `requirements-hardware.txt`; PyAudio needs
   PortAudio and the system's audio drivers.
+- On 64-bit Raspberry Pi OS, install the `flac` command for SpeechRecognition's
+  Google recognizer. Without it, microphone capture can work but transcription fails.
 - Internet access: `MicrophoneSpeechSource` uses Google's online recognizer.
 - A real player implementing `MediaPlayerBackend` is needed for audible media
   control. The repository currently supplies only `InMemoryPlayer`, which
@@ -17,7 +19,7 @@ Story #21 / NFR-06.
 
 ```bash
 sudo apt update
-sudo apt install python3-venv python3-dev build-essential portaudio19-dev alsa-utils
+sudo apt install python3-venv python3-dev build-essential portaudio19-dev alsa-utils flac
 git clone https://github.com/h6-hardware-voice-assistant/Software-Enginnering.git
 cd Software-Enginnering
 python3 -m venv .venv
@@ -48,9 +50,24 @@ the default microphone. Run `python -m pytest` to check the software separately.
 python -c "from voice_assistant.microphone import MicrophoneSpeechSource; from voice_assistant.recognition import recognize_command; print(recognize_command(MicrophoneSpeechSource().listen()).command)"
 ```
 
-The hardware smoke test remains pending until a Pi and a real media backend are
-available. Passing tests or running `voice_assistant.demo` with its simulated
-player does not establish physical playback.
+## Pi verification — 10 November 2026
+
+Raspberry Pi 5 Model B Rev 1.1, Raspberry Pi OS 64-bit (Trixie), Python 3.13.5.
+The test used a Shure MV6 USB microphone and mpv 0.40.0 playing `Front_Center.wav`
+through BlueALSA to Sony WH-XB910N headphones. A local smoke-test adapter connected
+mpv to `MultimediaController`; the repository demo still uses `InMemoryPlayer`.
+
+- Software: 162 tests passed on the Pi at `76d9c95`; `pip check` found no broken
+  dependencies after installing the hardware requirements.
+- TC-01 / TC-02: The Shure captured at 48 kHz. A spoken `Play` was recognized,
+  the app reported `Playback started.`, and playback was heard in the headphones.
+  On the repeat test, `Play` was recognized on the third attempt.
+- TC-03–TC-06: With test transcripts, the playback position stopped on Pause and
+  advanced on Resume. The real player volume changed from 30 to 40 and back to
+  30, and repeated commands held the 0 and 100 limits. Spoken `Volume Up` raised
+  the volume from 30 to 40 with `en-IN`. The recognizer returned `Volume Up`
+  during the `Volume Down` check with `en-IN`; switching the smoke test to
+  `en-US` recognized `Volume Down` after retries and lowered the volume to 30.
 
 ## ESP limitation
 
