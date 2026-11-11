@@ -37,3 +37,23 @@ Expected simulated behavior: Volume Up/Down change volume by 10 (clamped to 0–
 | Physical volume/navigation result | Fill in only after physical test |
 
 **Limitation:** `InMemoryPlayer` is a test double. Passing unit tests does not prove audible playback or Raspberry Pi hardware portability. Do not mark physical checks passed without performing them and recording actual output.
+
+## Raspberry Pi 5 verification record (11 November 2026)
+
+**Observed environment:** Raspberry Pi 5, Debian GNU/Linux 13.7 (Trixie), Python 3.13.5. Development dependencies were installed in a Python virtual environment. The Raspberry Pi had no local ALSA microphone capture device; an Android Redmi 13C 5G running IP Webcam supplied live audio over Wi-Fi. The adapter is in `voice_assistant/ip_webcam.py` and uses ffmpeg with `-re` for real-time capture, then Google SpeechRecognition (`en-IN`). A live microphone connection and internet access are prerequisites.
+
+**Automated verification:** `python -m pytest -q` returned **162 passed in 0.17s** on the Pi. This is a reported observation from the interactive hardware session, not an attached CI log.
+
+**Live end-to-end voice-to-controller smoke test:** The utterance “hello assistant play music” was transcribed, mapped to the allowlisted `play` command by a temporary alias wrapper, dispatched to `MultimediaController`, and recorded by `InMemoryPlayer`. Terminal result:
+
+```text
+HEARD: hello assistant play music
+STATUS: performed
+MESSAGE: Playback started.
+PLAYER OPERATIONS: ['play']
+PLAYER STATE: playing
+```
+
+**Scope and remaining limitations:** This validates real speech capture and speech-to-command-to-controller integration. It does **not** demonstrate audible playback, a real media-player backend, Bluetooth speaker/headphone pairing, or physical volume/track navigation. The alias wrapper was part of the smoke-test harness, not a persistent natural-language command parser. A repeatable Pi demo should configure `IP_WEBCAM_AUDIO_URL` for the phone's current `/audio.wav` endpoint; do not commit the phone's transient IP address.
+
+**Presentation framing:** “The modular voice-command software and its 162-test suite were verified on Raspberry Pi 5; a live spoken Play command reached the multimedia controller. The current playback backend is simulated; speaker output remains future integration work.”
