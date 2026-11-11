@@ -25,7 +25,7 @@ voice_assistant\recognition.py      21      0      0      0   100%
 TOTAL                              386     21     60     12    93%
 ```
 
-**Interpretation:** 93% is the combined pytest-cov coverage figure, **not a separate branch-only percentage**. The branch column reports 60 identified branches and BrPart reports 12 partial branches. To establish an exact branch-only percentage, inspect the generated coverage XML/JSON report. HTML output was generated at `htmlcov/index.html` and XML at `coverage.xml` on the developer's local machine; these artifacts were not automatically uploaded with this markdown summary.
+**Interpretation (verified from the HTML report screenshot):** Statement coverage **95%**; branch coverage **80%**; combined coverage **93%**. The report lists 60 branches and 12 partial branches. The HTML report was generated on 11 November 2026 at 13:26 +0530. HTML output was generated at `htmlcov/index.html` and XML at `coverage.xml` on the developer's local machine; these artifacts were not automatically uploaded with this markdown summary.
 
 **Scope limitation:** The displayed report does not include `voice_assistant/ip_webcam.py`, which was added to the remote repository separately. It is not correct to claim this run measured that adapter's coverage. Physical audio playback and Bluetooth output remain unverified.
 
