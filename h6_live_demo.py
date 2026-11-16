@@ -12,13 +12,24 @@ from pathlib import Path
 from voice_assistant.assistant import VoiceAssistant
 from voice_assistant.commands import normalize
 from voice_assistant.controller import MultimediaController
+from voice_assistant.errors import UnsupportedCommandError
 from voice_assistant.ip_webcam import IPWebcamSpeechSource, normalize_webcam_url
 from voice_assistant.player import InMemoryPlayer
 
 
+# Sprint 1 exposed the foundational playback controls. Sprint 2 added volume
+# and navigation. The current application code supports the cumulative set;
+# these limits apply ONLY to the educational Sprint 1 playback demonstration.
+SPRINT_1_COMMANDS = frozenset({"play", "pause", "resume"})
+SPRINT_2_ADDITIONS = frozenset({"volume up", "volume down", "next", "previous"})
+
+
 class DemoSpeechSource:
     """Existing live IP Webcam adapter with a narrow wake-phrase convenience."""
-    def __init__(self, url):
+    def __init__(self, url, sprint="1"):
+        if sprint not in ("1", "2"):
+            raise ValueError("Sprint must be 1 or 2")
+        self.sprint = sprint
         self.input = IPWebcamSpeechSource(url=url)
         self.last_heard = None
         self.last_command = None
@@ -51,6 +62,16 @@ class DemoSpeechSource:
         self.last_command = phrase
         print(f'HEARD: {heard}', flush=True)
         print(f'NORMALIZED COMMAND: {phrase}', flush=True)
+        if self.sprint == '1' and phrase in SPRINT_2_ADDITIONS:
+            # Block Sprint-2-only operations before the production dispatcher.
+            # Their presence on main does not make them Sprint 1 deliverables.
+            raise UnsupportedCommandError(
+                phrase,
+                user_message=(
+                    f"'{phrase}' was introduced in Sprint 2 and is not "
+                    "enabled in the Sprint 1 demonstration."
+                ),
+            )
         return phrase
 
 
@@ -58,7 +79,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--url', default=None, help='Optional IP Webcam URL; skips interactive prompt')
     parser.add_argument('--log', default='h6_demo_evidence.jsonl', help='Append-only evidence log')
-    parser.add_argument('--sprint', choices=['1', '2'], default='1', help='Label evidence with sprint')
+    parser.add_argument('--sprint', choices=['1', '2'], default='1', help='Select Sprint 1 feature scope or Sprint 2 cumulative scope')
     args = parser.parse_args()
 
     # Always request the live phone address at startup unless --url was supplied.
@@ -83,15 +104,25 @@ def main():
             parser.error("Invalid --url. Use an IP address or http://PHONE_IP:8080")
 
     print(f"Microphone audio endpoint: {address}", flush=True)
-    source = DemoSpeechSource(address)
+    source = DemoSpeechSource(address, sprint=args.sprint)
     player = InMemoryPlayer()
     assistant = VoiceAssistant(source, MultimediaController(player))
     log = Path(args.log)
     print('\nH6 LIVE VOICE ASSISTANT DEMO')
     print('INPUT: Redmi phone / IP Webcam -> Raspberry Pi -> SpeechRecognition')
     print('BACKEND: InMemoryPlayer (simulated operations; NO audible playback)')
-    print('COMMANDS: play, pause, resume, volume up/down, next, previous')
-    print('OPTIONAL: hello assistant play music / next track / previous track')
+    if args.sprint == '1':
+        print('SPRINT 1 | PLAYBACK FOUNDATION')
+        print('AVAILABLE IN THIS DEMO: play, pause, resume')
+        print('ADDED IN SPRINT 2 (not enabled here): volume up/down, next, previous')
+        print('SUGGESTED LIVE SEQUENCE: play -> pause -> resume')
+    else:
+        print('SPRINT 2 | VOLUME, TRACK NAVIGATION, REGRESSION')
+        print('NEW IN SPRINT 2: volume up, volume down, next, previous')
+        print('CARRIED FORWARD FROM SPRINT 1: play, pause, resume')
+        print('SUGGESTED LIVE SEQUENCE: play -> volume up -> volume down -> next -> previous -> pause')
+    print('NOTE: Both demo modes use the latest code; Sprint 1 mode limits feature scope for comparison.')
+    print('OPTIONAL WAKE PHRASES: hello assistant play music / next track / previous track')
     print(f'SPRINT: {args.sprint} | EVIDENCE LOG: {log.resolve()}')
     print('Press Enter for each voice capture; type q then Enter to quit.\n')
 
