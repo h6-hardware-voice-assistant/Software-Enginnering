@@ -95,3 +95,33 @@ The Jira board is an additional planning cross-reference; it is not named as a r
 ### Presentation demo without audio hardware
 
 Run `python -m voice_assistant.demo`, enter `help`, then try `play`, `pause`, `resume`, `volume up`, `next`, and an unsupported command such as `shuffle`. This shows the supported command-to-controller logic without requiring a microphone or speakers. It is a simulated demonstration, not physical playback.
+
+
+### Live Raspberry Pi voice demo — enter the phone IP at each start
+
+On the Raspberry Pi, activate the existing virtual environment and launch the
+live demo:
+
+```bash
+cd ~/Software-Enginnering
+source .venv/bin/activate
+python h6_live_demo.py --sprint 1
+# or
+python h6_live_demo.py --sprint 2
+```
+
+The script asks for the phone's *current* IP Webcam address on every run.
+Start IP Webcam on the phone and enter the address displayed by the app, e.g.
+`http://192.168.1.50:8080` or just `192.168.1.50`. The program automatically
+uses the `/audio.wav` endpoint; no source edits or `export` are required.
+You can also supply `--url http://PHONE_IP:8080` to skip the prompt.
+
+For a new Raspberry Pi environment, install dependencies inside `.venv` using
+`python -m pip install -r requirements-hardware.txt`. An `ffmpeg` executable
+must be installed on the Pi. Keep IP Webcam running and make sure its address
+is reachable from the Pi. Google speech recognition requires internet access.
+If a phone disconnects mid-demo, the adapter makes one attempt to rediscover
+a working phone address, otherwise restart the demo and enter the new URL.
+
+The demo's `InMemoryPlayer` is a **simulator**: live microphone input and speech
+recognition are real, but it does not play audible music.
