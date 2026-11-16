@@ -212,7 +212,10 @@ class IPWebcamSpeechSource:
     def __init__(self, url: str | None = None, language: str = "en-IN") -> None:
         self.url = normalize_webcam_url(url)
         self.language = language
-        self._resolved = False
+        # An explicitly supplied URL comes from the user's current phone screen.
+        # Trust it immediately rather than running a network-wide discovery scan.
+        # A failed capture still triggers one discovery/reconnection attempt.
+        self._resolved = self.url is not None
         self._recognizer = None
 
     def _ensure_url(self, *, exclude: set[str] | None = None) -> str:
