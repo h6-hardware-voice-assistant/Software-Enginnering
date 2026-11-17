@@ -14,12 +14,10 @@ This repository contains the **Team H6 group mini-project** and its Software Eng
 
 ## Final presentation recording
 
-The combined Sprint 1 + Sprint 2 presentation video is prepared for placement at
-`docs/demo/H6_Final_Project_Demonstration.mp4`. See the
-[demo upload instructions and status](./docs/demo/README.md). The MP4 must be
-committed from the machine containing the file; creating the documentation
-does not upload the binary recording. Verify the video exists in the repository
-before sharing its link for assessment.
+The [Team H6 Final Project Demonstration video](./docs/demo/H6_Final_Project_Demonstration.mp4)
+has been uploaded and verified in the repository under `docs/demo/`.
+The recording combines the Sprint 1 and Sprint 2 presentation material;
+see the [demo evidence notes](./docs/demo/README.md) for technical details.
 
 The recording covers live voice input, command recognition, and simulated
 multimedia operations using `InMemoryPlayer`, **not** audible music playback.
