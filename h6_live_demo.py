@@ -112,7 +112,7 @@ def main():
         music_dir = Path(args.music_dir).expanduser()
         tracks = sorted(
             p for p in music_dir.iterdir()
-            if p.is_file() and p.suffix.lower() in {'.mp3', '.wav', '.flac', '.ogg', '.m4a'}
+            if p.is_file() and p.suffix.lower() in {'.mp3', '.mpeg', '.mpg', '.wav', '.flac', '.ogg', '.m4a', '.aac'}
         ) if music_dir.is_dir() else []
         if not tracks:
             parser.error(f"No audio files in {music_dir}. Add .mp3 or .wav files before using --real-audio.")
@@ -159,7 +159,15 @@ def main():
         source.last_heard = None
         source.last_command = None
         before = len(player.calls)
-        outcome = assistant.handle_once()
+        # Muting music during the phone listening window prevents speaker audio
+        # from drowning out the spoken command. Restore audio immediately afterward.
+        if args.real_audio:
+            player.set_capture_mute(True)
+        try:
+            outcome = assistant.handle_once()
+        finally:
+            if args.real_audio:
+                player.set_capture_mute(False)
         record = {
             'timestamp_utc': datetime.now(timezone.utc).isoformat(),
             'sprint': args.sprint,
