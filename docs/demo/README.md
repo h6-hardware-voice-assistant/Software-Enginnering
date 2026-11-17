@@ -1,30 +1,22 @@
 # Team H6 — Final Demonstration Video
 
-The approved output filename for the combined Sprint 1 and Sprint 2 presentation recording is:
+## Uploaded recording
 
-`docs/demo/H6_Final_Project_Demonstration.mp4`
+[**Watch / download H6_Final_Project_Demonstration.mp4**](./H6_Final_Project_Demonstration.mp4)
 
-## Upload status
+- **Repository file:** `docs/demo/H6_Final_Project_Demonstration.mp4`
+- **Size:** 30,939,425 bytes (approximately 29.5 MiB)
+- **Runtime:** 3 min 56 sec
+- **Video:** H.264, 1920 × 1080
+- **Audio:** AAC
+- **SHA-256:** `afa42983ce533895d19e8b726b117566e8d992ea8facd6afcbbbd95b48015193`
 
-**Verify the uploaded asset:** [Open the final presentation MP4](./H6_Final_Project_Demonstration.mp4). The link works only once the actual MP4 has been committed to this directory. The recording is approximately 31 MB and must be uploaded from a computer using Git (instructions below); creating this Markdown file alone does not upload the video.
-
-## Upload from the computer containing the MP4
-
-From a working clone of `h6-hardware-voice-assistant/Software-Enginnering`:
-
-```powershell
-git pull --ff-only
-New-Item -ItemType Directory -Force -Path docs/demo | Out-Null
-Copy-Item -LiteralPath "C:\path\to\H6_Final_Project_Demonstration.mp4" -Destination "docs/demo/H6_Final_Project_Demonstration.mp4"
-git add docs/demo/H6_Final_Project_Demonstration.mp4
-git commit -m "docs(demo): add Team H6 combined final presentation recording"
-git push origin main
-```
-
-Check that the video appears in the repository after the push, then open it using [final presentation demo](./H6_Final_Project_Demonstration.mp4).
+The exact video bytes were verified by checksum as part of the automated GitHub upload. The original uploaded MP4 has been committed to the default `main` branch.
 
 ## Evidence scope
 
+This is the combined Team H6 Sprint 1 and Sprint 2 presentation recording.
+
 The project demonstrates real voice capture using a phone microphone and Raspberry Pi, command recognition, validation, and simulated multimedia state changes using `InMemoryPlayer`. This is **not evidence of audible playback** through an actual hardware audio device.
 
-This final combined video supplements the separate sprint video deliverables requested by the course checklist: a 1-minute Sprint 1 outcome and a 2-minute Sprint 2 outcome. Those should be uploaded separately if they have not yet been submitted.
+This combined video supplements the separate sprint video deliverables requested by the course checklist: a 1-minute Sprint 1 outcome and a 2-minute Sprint 2 outcome. Those should be uploaded separately if they have not yet been submitted.
