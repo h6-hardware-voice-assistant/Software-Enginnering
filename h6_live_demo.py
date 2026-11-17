@@ -15,7 +15,6 @@ from voice_assistant.controller import MultimediaController
 from voice_assistant.errors import UnsupportedCommandError
 from voice_assistant.ip_webcam import IPWebcamSpeechSource, normalize_webcam_url
 from voice_assistant.player import InMemoryPlayer
-from voice_assistant.mpv_player import MpvPlayer
 
 
 # Sprint 1 exposed the foundational playback controls. Sprint 2 added volume
@@ -81,8 +80,6 @@ def main():
     parser.add_argument('--url', default=None, help='Optional IP Webcam URL; skips interactive prompt')
     parser.add_argument('--log', default='h6_demo_evidence.jsonl', help='Append-only evidence log')
     parser.add_argument('--sprint', choices=['1', '2'], default='1', help='Select Sprint 1 feature scope or Sprint 2 cumulative scope')
-    parser.add_argument('--real-audio', action='store_true', help='Play actual audio through mpv instead of simulating')
-    parser.add_argument('--music-dir', default='demo_music', help='Folder containing .mp3/.wav/.flac/.ogg tracks for --real-audio')
     args = parser.parse_args()
 
     # Always request the live phone address at startup unless --url was supplied.
@@ -108,26 +105,12 @@ def main():
 
     print(f"Microphone audio endpoint: {address}", flush=True)
     source = DemoSpeechSource(address, sprint=args.sprint)
-    if args.real_audio:
-        music_dir = Path(args.music_dir).expanduser()
-        tracks = sorted(
-            p for p in music_dir.iterdir()
-            if p.is_file() and p.suffix.lower() in {'.mp3', '.mpeg', '.mpg', '.wav', '.flac', '.ogg', '.m4a', '.aac'}
-        ) if music_dir.is_dir() else []
-        if not tracks:
-            parser.error(f"No audio files in {music_dir}. Add .mp3 or .wav files before using --real-audio.")
-        try:
-            player = MpvPlayer(tracks)
-        except (OSError, RuntimeError, ValueError) as exc:
-            parser.error(f"Real audio unavailable: {exc}")
-    else:
-        player = InMemoryPlayer()
+    player = InMemoryPlayer()
     assistant = VoiceAssistant(source, MultimediaController(player))
     log = Path(args.log)
     print('\nH6 LIVE VOICE ASSISTANT DEMO')
     print('INPUT: Redmi phone / IP Webcam -> Raspberry Pi -> SpeechRecognition')
-    print('BACKEND: mpv (REAL AUDIO to Pi output)' if args.real_audio else
-          'BACKEND: InMemoryPlayer (simulated operations; NO audible playback)')
+    print('BACKEND: InMemoryPlayer (simulated operations; NO audible playback)')
     if args.sprint == '1':
         print('SPRINT 1 | PLAYBACK FOUNDATION')
         print('AVAILABLE IN THIS DEMO: play, pause, resume')
@@ -159,15 +142,7 @@ def main():
         source.last_heard = None
         source.last_command = None
         before = len(player.calls)
-        # Muting music during the phone listening window prevents speaker audio
-        # from drowning out the spoken command. Restore audio immediately afterward.
-        if args.real_audio:
-            player.set_capture_mute(True)
-        try:
-            outcome = assistant.handle_once()
-        finally:
-            if args.real_audio:
-                player.set_capture_mute(False)
+        outcome = assistant.handle_once()
         record = {
             'timestamp_utc': datetime.now(timezone.utc).isoformat(),
             'sprint': args.sprint,
@@ -181,7 +156,7 @@ def main():
             'player_state': player.state,
             'current_item': player.current_item,
             'volume': player.volume,
-            'backend': 'MpvPlayer (actual audio)' if args.real_audio else 'InMemoryPlayer (simulation, no audible playback)',
+            'backend': 'InMemoryPlayer (simulation, no audible playback)',
         }
         print(f"STATUS: {record['status']} | MESSAGE: {record['message']}")
         print(f"OPERATION: {record['operation']} | PLAYER CALLS: {record['player_calls_this_attempt']}")
@@ -189,8 +164,6 @@ def main():
         with log.open('a', encoding='utf-8') as handle:
             handle.write(json.dumps(record, ensure_ascii=False) + '\n')
         print(f'Logged attempt #{attempt}\n', flush=True)
-    if args.real_audio:
-        player.close()
     print(f'Evidence saved: {log.resolve()}')
 
 
