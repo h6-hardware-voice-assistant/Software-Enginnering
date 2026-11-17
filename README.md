@@ -12,6 +12,20 @@ Arpan Joardar's SRN is confirmed as `PES1UG25CS805` by the student. The `PES1UG2
 
 This repository contains the **Team H6 group mini-project** and its Software Engineering backlog.
 
+## Final presentation recording
+
+The combined Sprint 1 + Sprint 2 presentation video is prepared for placement at
+`docs/demo/H6_Final_Project_Demonstration.mp4`. See the
+[demo upload instructions and status](./docs/demo/README.md). The MP4 must be
+committed from the machine containing the file; creating the documentation
+does not upload the binary recording. Verify the video exists in the repository
+before sharing its link for assessment.
+
+The recording covers live voice input, command recognition, and simulated
+multimedia operations using `InMemoryPlayer`, **not** audible music playback.
+The separately requested 1-minute Sprint 1 and 2-minute Sprint 2 outcome
+videos remain distinct deliverables.
+
 ## Backlog links
 
 - [Backlog register with story points, sprint plan, requirement traceability and Jira cross-reference](./BACKLOG.md)
