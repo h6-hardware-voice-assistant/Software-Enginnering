@@ -6,7 +6,7 @@ The approved output filename for the combined Sprint 1 and Sprint 2 presentation
 
 ## Upload status
 
-The user-supplied final MP4 is **not yet committed** to this repository. It is approximately 31 MB. The connected GitHub text-file tool cannot upload binary MP4 assets. Add the original bytes from a local machine using Git (instructions below); do not substitute an empty or text-only file for the actual video.
+**Verify the uploaded asset:** [Open the final presentation MP4](./H6_Final_Project_Demonstration.mp4). The link works only once the actual MP4 has been committed to this directory. The recording is approximately 31 MB and must be uploaded from a computer using Git (instructions below); creating this Markdown file alone does not upload the video.
 
 ## Upload from the computer containing the MP4
 
