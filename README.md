@@ -32,6 +32,30 @@ videos remain distinct deliverables.
 - Epics: [Voice input](https://github.com/h6-hardware-voice-assistant/Software-Enginnering/issues/1) · [Playback/navigation](https://github.com/h6-hardware-voice-assistant/Software-Enginnering/issues/2) · [Volume](https://github.com/h6-hardware-voice-assistant/Software-Enginnering/issues/3) · [Validation/errors](https://github.com/h6-hardware-voice-assistant/Software-Enginnering/issues/4) · [Quality/hardware](https://github.com/h6-hardware-voice-assistant/Software-Enginnering/issues/5) · [Automation/delivery](https://github.com/h6-hardware-voice-assistant/Software-Enginnering/issues/6)
 - Story issues: #7–#23 in the repository's Issues tab.
 
+## Architecture and UML diagrams
+
+The original diagrams from our [IEEE-format SRS and SAD document](./MINI%20PROJECT.pdf) are available below and in the [full architecture diagram gallery](./docs/diagrams/README.md).
+
+### Use-case diagram
+
+![Team H6 use-case diagram](./docs/diagrams/use-case-diagram.png)
+
+### System architecture / component diagram
+
+![Team H6 architecture diagram](./docs/diagrams/component-architecture.png)
+
+### Sequence diagrams
+
+**Play operation**
+
+![Team H6 Play sequence](./docs/diagrams/sequence-play.png)
+
+**Volume Up operation**
+
+![Team H6 Volume Up sequence](./docs/diagrams/sequence-volume-up.png)
+
+**Implementation note:** The diagrams describe the system design. The current Raspberry Pi demonstration uses a smartphone IP Webcam for live voice capture and an `InMemoryPlayer` simulation for multimedia operations; physical audible playback is not yet demonstrated.
+
 ## Source code and tests
 
 The application follows the modular architecture in the SAD (NFR-05); each module is
