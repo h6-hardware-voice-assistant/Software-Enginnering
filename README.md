@@ -159,20 +159,5 @@ is reachable from the Pi. Google speech recognition requires internet access.
 If a phone disconnects mid-demo, the adapter makes one attempt to rediscover
 a working phone address, otherwise restart the demo and enter the new URL.
 
-By default, the demo's `InMemoryPlayer` is a **simulator**. To hear real music,
-install `mpv` on the Raspberry Pi, place at least two local audio files in the
-`demo_music/` directory, and add `--real-audio`:
-
-```bash
-sudo apt-get install -y mpv
-mkdir -p demo_music
-# Copy your .mp3, .mp3.mpeg, .wav, .flac, .ogg, .m4a, or .aac songs here.
-python h6_live_demo.py --sprint 2 --real-audio
-```
-
-The audio backend is `voice_assistant/mpv_player.py`; it temporarily mutes
-speaker output while recording each new voice command to reduce feedback.
-The `demo_music/` directory is gitignored: do not commit copyrighted music.
-Verify the Pi audio output separately by running
-`mpv --no-video --length=3 demo_music/<your-track-file>`.
-Real speaker output has **not** been independently verified on the Pi yet.
+The demo's `InMemoryPlayer` is a **simulator**: live microphone input and speech
+recognition are real, but it does not play audible music.
