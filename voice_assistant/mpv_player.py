@@ -137,6 +137,7 @@ class MpvPlayer:
             raise PlayerOperationError("next_item", "No next track")
         new_index = self.index + 1
         self._command("next_item", "loadfile", self.playlist[new_index], "replace")
+        self._command("unpause", "set_property", "pause", False)
         self.index = new_index
         self.calls.append("next_item")
         self._state = PLAYING
@@ -146,6 +147,7 @@ class MpvPlayer:
             raise PlayerOperationError("previous_item", "No previous track")
         new_index = self.index - 1
         self._command("previous_item", "loadfile", self.playlist[new_index], "replace")
+        self._command("unpause", "set_property", "pause", False)
         self.index = new_index
         self.calls.append("previous_item")
         self._state = PLAYING
