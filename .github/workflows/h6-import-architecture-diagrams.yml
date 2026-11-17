@@ -1,0 +1,42 @@
+name: Import Original H6 Architecture Diagrams (one-time)
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/h6-import-architecture-diagrams.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  import-diagrams:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Download and verify original diagram archive
+        env:
+          ASSET_URL: 'https://d2ol7oe51mr4n9.cloudfront.net/user_3InnNTs2G6yAPn35696axJ0qjP9/3997b1ab-2fd0-4e54-9e28-63998370d24b.zip'
+          ARCHIVE_SHA: '36d136009cdeace0d9137a69a31ae2b02a873b3457fa02180eb5c3440dc115b8'
+        run: |
+          set -euo pipefail
+          curl --fail --silent --show-error --location --retry 3 --max-time 120 "$ASSET_URL" -o /tmp/h6-architecture-diagrams.zip
+          printf '%s  /tmp/h6-architecture-diagrams.zip\n' "$ARCHIVE_SHA" | sha256sum --check -
+          mkdir -p docs/diagrams
+          unzip -j -o /tmp/h6-architecture-diagrams.zip -d docs/diagrams
+          for path in use-case-diagram.png component-architecture.png sequence-play.png sequence-volume-up.png; do
+            test -s "docs/diagrams/$path"
+            file "docs/diagrams/$path" | grep -q 'PNG image data'
+          done
+      - name: Commit extracted original diagrams
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/diagrams/*.png
+          git diff --staged --quiet && exit 0
+          git commit -m "docs(architecture): add original use-case, component and sequence diagrams"
+          git push origin HEAD:main
