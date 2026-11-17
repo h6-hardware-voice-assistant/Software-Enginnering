@@ -1,0 +1,40 @@
+name: Import H6 Final Demo Video (one-time)
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/h6-import-final-demo.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  import-video:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Download uploaded final demo and validate checksum
+        env:
+          DEMO_URL: 'https://d2ol7oe51mr4n9.cloudfront.net/user_3InnNTs2G6yAPn35696axJ0qjP9/5bb06361-8495-4c6d-90d0-5f92372e9ce6.mp4'
+          EXPECTED_SHA256: 'afa42983ce533895d19e8b726b117566e8d992ea8facd6afcbbbd95b48015193'
+        run: |
+          set -euo pipefail
+          mkdir -p docs/demo
+          curl --fail --location --show-error --silent --retry 3 --max-time 300 "$DEMO_URL" -o docs/demo/H6_Final_Project_Demonstration.mp4
+          printf '%s  %s\n' "$EXPECTED_SHA256" docs/demo/H6_Final_Project_Demonstration.mp4 | sha256sum --check -
+          test "$(stat -c%s docs/demo/H6_Final_Project_Demonstration.mp4)" -eq 30939425
+      - name: Commit video to main
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/demo/H6_Final_Project_Demonstration.mp4
+          git diff --staged --quiet && exit 0
+          git commit -m "docs(demo): upload final Team H6 presentation MP4"
+          git push origin HEAD:main
