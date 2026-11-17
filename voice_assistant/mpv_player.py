@@ -132,6 +132,10 @@ class MpvPlayer:
         self.volume = new_volume
         self.calls.append("volume_down")
 
+    def set_capture_mute(self, enabled: bool) -> None:
+        """Temporarily mute speaker audio while recording a voice command."""
+        self._command("capture_mute", "set_property", "mute", bool(enabled))
+
     def next_item(self) -> None:
         if self.index >= len(self.playlist) - 1:
             raise PlayerOperationError("next_item", "No next track")
