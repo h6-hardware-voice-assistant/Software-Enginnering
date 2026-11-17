@@ -2,3 +2,7 @@ __pycache__/
 *.py[cod]
 .pytest_cache/
 .venv/
+
+# Local demonstration audio (not for redistribution in public repository)
+demo_music/
+h6_demo_evidence.jsonl
